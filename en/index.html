@@ -146,51 +146,6 @@
         .glass-btn:active {
             transform: scale(0.96);
         }
-        .bot-banner {
-            background: linear-gradient(135deg, #0088cc, #005f8a);
-            border-radius: 24px;
-            padding: 24px 28px;
-            margin-bottom: 32px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 12px;
-            box-shadow: var(--shadow-md);
-        }
-        .bot-banner h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 0;
-        }
-        .bot-banner p {
-            margin: 0;
-            opacity: 0.9;
-            font-size: 1rem;
-        }
-        .bot-banner .bot-btn {
-            background: white;
-            color: #0088cc;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        .bot-banner .bot-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .bot-banner .bot-btn:active {
-            transform: scale(0.96);
-        }
         .intro-section {
             background: var(--bg-card);
             border-radius: 20px;
@@ -1017,7 +972,7 @@
         </button>
     </div>
 
-   
+    <!-- BOT BANNER REMOVED -->
 
     <div id="homeContainer">
         <div class="intro-section">
@@ -1176,9 +1131,19 @@
     </div>
 </div>
 
-<script src="../contact-config.js"></script>
 <script>
     (function() {
+        // ============================================================
+        // CONTACT CONFIG — INLINE (no external file needed)
+        // ============================================================
+        window.CONTACT_CONFIG = {
+            hours: "9h – 21h (UTC+3) ｜ በኢትዮጵያ አቆጣጠር፡ ከጠዋቱ 3፡00 - ከምሽቱ 3፡00",
+            contacts: [
+                { name: "Jessica (Main)",   url: "https://t.me/PGJessica",      icon: "📱" },
+                { name: "Jessica (Backup)", url: "https://t.me/PG91Jessica91",  icon: "📱" }
+            ]
+        };
+
         // ============================================================
         // LANGUAGE SWITCHER
         // ============================================================
@@ -1194,14 +1159,14 @@
             }
         }
 
-function switchLang(lang) {
-    var basePath = window.location.pathname.split('/').slice(0, 2).join('/');
-    if (lang === 'am') {
-        window.location.href = basePath + '/';
-    } else if (lang === 'en') {
-        window.location.href = basePath + '/en/';
-    }
-}
+        function switchLang(lang) {
+            var basePath = window.location.pathname.split('/').slice(0, 2).join('/');
+            if (lang === 'am') {
+                window.location.href = basePath + '/';
+            } else if (lang === 'en') {
+                window.location.href = basePath + '/en/';
+            }
+        }
 
         window.toggleLangPanel = toggleLangPanel;
         window.switchLang = switchLang;
@@ -1390,100 +1355,134 @@ function switchLang(lang) {
         let ARTICLES = {};
         let ACTIVITIES = [];
 
-        function buildArticlesFromData() {
-            ARTICLES = {};
-            CARDS_DATA.forEach(card => {
-                ARTICLES[card.id] = {
-                    title: card.title,
-                    meta: card.meta,
-                    content: card.content
-                };
-            });
-            ARTICLES['contact-manager'] = {
-                title: "Contact Manager",
+        // Built-in fallback content for cards (in case cards.json fails)
+        const BUILTIN_CONTENT = {
+            'why-pg-safe': {
+                meta: "Legal, stable, financial security, and verifiable",
+                content: "<p><strong>PG (PG Playground)</strong> is a legally registered technology service company based in Colorado, USA, operating since 2018. All user funds are held in segregated accounts, ensuring your working capital is safe and fully refundable at any time.</p>"
+            },
+            'deposit-earnings': {
+                meta: "Daily earnings: 60 ETB (Junior), 280 ETB (VIP 1), 800 ETB (VIP 2), 2,500 ETB (VIP 3)",
+                content: "<table class='income-table'><thead><tr><th>Level</th><th>Deposit (ETB)</th><th>Daily Income</th><th>Min Withdrawal</th></tr></thead><tbody><tr><td>Junior Staff</td><td>3,600</td><td>60</td><td>300</td></tr><tr><td>VIP 1</td><td>9,000</td><td>280</td><td>1,400</td></tr><tr><td>VIP 2</td><td>24,000</td><td>800</td><td>4,000</td></tr><tr><td>VIP 3</td><td>68,000</td><td>2,500</td><td>12,500</td></tr></tbody></table>"
+            },
+            'topup-steps': {
+                meta: "Contact manager → Transfer → Confirm → Receive credit",
+                content: "<ol><li>Contact your manager via Telegram or Signal.</li><li>Send the required deposit amount to the provided bank account (CBE or Telebirr).</li><li>Send the transfer screenshot to the manager for verification.</li><li>Funds will be credited to your platform account within 10 minutes.</li></ol>"
+            },
+            'withdrawal-rules': {
+                meta: "Monday–Friday only, arrives in 1–4 days",
+                content: "<p>Withdrawals are processed <strong>Monday to Friday</strong> (not on weekends). Funds typically arrive in your bank account within <strong>1 to 4 business days</strong>. Ensure your withdrawal amount meets the minimum threshold for your level.</p>"
+            },
+            'why-topup': {
+                meta: "Your deposit is fully refundable working capital",
+                content: "<p>The deposit is not a fee—it is <strong>fully refundable working capital</strong>. You can withdraw your principal at any time. It acts as a security bond that enables you to handle daily brand orders and earn commissions.</p>"
+            },
+            'task-steps': {
+                meta: "Step by step: Add address → Enter order",
+                content: "<ol><li>Log in to your PG dashboard.</li><li>Navigate to 'Today's Orders'.</li><li>Add the shipping address provided in the task description.</li><li>Click 'Buy' to confirm the order entry.</li><li>Wait for the timer to expire—commission is automatically added.</li></ol>"
+            },
+            'order-guide': {
+                meta: "Fields, status colors, and batch completion logic",
+                content: "<p><strong>Order Status Colors:</strong><br>🟢 <strong>Green</strong> – Ready to process (click 'Buy')<br>🟡 <strong>Yellow</strong> – Waiting for confirmation<br>🔴 <strong>Red</strong> – Timer expired / Complete</p><p><strong>Batch Logic:</strong> Complete all pending orders in a batch before starting the next batch to maximize your daily commission efficiency.</p>"
+            },
+            'extra-earnings': {
+                meta: "Referral bonus, downline discounts, security products",
+                content: "<ul><li><strong>Referral Bonus:</strong> Earn a percentage of your referrals' daily commission.</li><li><strong>Downline Discounts:</strong> Higher VIP levels get discounted rates on security products.</li><li><strong>Security Products:</strong> Optional products that protect your account and boost daily earnings.</li></ul>"
+            },
+            'platform-synergy': {
+                meta: "Invite → Bonus → Security products → Upgrade → Team income → Discounts",
+                content: "<p>Our growth model: <strong>Invite</strong> → Earn <strong>Bonus</strong> → Purchase <strong>Security Products</strong> → <strong>Upgrade</strong> your level → Increase <strong>Team Income</strong> → Unlock <strong>Discounts</strong> for your whole team.</p>"
+            },
+            'order-block-reasons': {
+                meta: "Common errors and how to resolve them",
+                content: "<ul><li><strong>Insufficient balance:</strong> Top up your account to cover the order amount.</li><li><strong>Incorrect address format:</strong> Ensure the shipping address matches the task description exactly.</li><li><strong>Network timeout:</strong> Refresh the page and try again.</li></ul>"
+            },
+            'letter-to-team': {
+                meta: "A real, honest, and sustainable opportunity",
+                content: "<div class='letter-card'><div class='letter-quote-icon'>❝</div><p class='dropcap'>Dear team member, this is not a get-rich-quick scheme. It is a real, sustainable job that pays you for verifying brand transaction data. Your efforts are valued, and your deposits are safe.</p><p>We have been operating for 8 years, and our platform is transparent and legal. Every day, we process thousands of orders. Join us, and let's grow together.</p><p><strong>Welcome to the PG family.</strong></p></div>"
+            },
+            'pg-rules': {
+                meta: "Official guidelines and policies for all staff",
+                content: "<ul><li><strong>One account per person</strong> – multiple accounts are strictly prohibited.</li><li><strong>Orders must be completed within the given time.</strong></li><li><strong>Withdrawals are processed on business days only.</strong></li><li><strong>Respect your manager and follow instructions.</strong></li></ul>"
+            },
+            'contact-manager': {
                 meta: "Direct support for deposit/withdrawal/upgrades",
                 content: buildContactManagerContent()
-            };
-            ARTICLES['activity-center'] = {
-                title: "📢 Activity Center",
+            },
+            'activity-center': {
                 meta: "View and participate in current activities",
                 content: buildActivityListHTML()
-            };
-            ACTIVITIES.forEach(act => {
-                ARTICLES['activity-' + act.id] = {
-                    title: act.title,
-                    meta: act.time || "Activity",
-                    content: buildActivityDetailHTML(act)
-                };
-            });
-        }
+            }
+        };
 
         function buildContactManagerContent() {
-            if (window.CONTACT_CONFIG) {
-                if (window.CONTACT_CONFIG.contacts && Array.isArray(window.CONTACT_CONFIG.contacts)) {
-                    let links = '';
-                    for (let c of window.CONTACT_CONFIG.contacts) {
-                        links += `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contact-link">${c.icon ? c.icon+' ' : ''}${c.name}</a> `;
+            var cfg = window.CONTACT_CONFIG;
+            if (cfg) {
+                if (cfg.contacts && Array.isArray(cfg.contacts) && cfg.contacts.length > 0) {
+                    var links = '';
+                    for (var i = 0; i < cfg.contacts.length; i++) {
+                        var c = cfg.contacts[i];
+                        links += '<a href="' + c.url + '" target="_blank" rel="noopener noreferrer" class="contact-link">' + (c.icon ? c.icon + ' ' : '') + c.name + '</a> ';
                     }
-                    return `<p><strong>Manager Contacts:</strong></p><p>${links}</p><p>🕒 <strong>Working Hours:</strong> ${window.CONTACT_CONFIG.hours || "9h – 21h (UTC+3)"}</p><p>Your manager will assist you with deposit verification, withdrawal requests, level upgrades, and daily support.</p>`;
-                } else if (window.CONTACT_CONFIG.telegram && window.CONTACT_CONFIG.signal) {
-                    return `<p><strong>Official Manager Contacts:</strong></p><p><a href="${window.CONTACT_CONFIG.telegram}" target="_blank" rel="noopener noreferrer" class="contact-link">📱 Telegram Manager</a> <a href="${window.CONTACT_CONFIG.signal}" target="_blank" rel="noopener noreferrer" class="contact-link">🔒 Signal Manager</a></p><p>🕒 <strong>Working Hours:</strong> ${window.CONTACT_CONFIG.hours || "9h – 21h (UTC+3)"}</p><p>Your manager will assist you with deposit verification, withdrawal requests, level upgrades, and daily support.</p>`;
+                    return '<p><strong>Manager Contacts:</strong></p><p>' + links + '</p><p>🕒 <strong>Working Hours:</strong> ' + (cfg.hours || "9h – 21h (UTC+3)") + '</p><p>Your manager will assist you with deposit verification, withdrawal requests, level upgrades, and daily support.</p>';
+                } else if (cfg.telegram && cfg.signal) {
+                    return '<p><strong>Official Manager Contacts:</strong></p><p><a href="' + cfg.telegram + '" target="_blank" rel="noopener noreferrer" class="contact-link">📱 Telegram Manager</a> <a href="' + cfg.signal + '" target="_blank" rel="noopener noreferrer" class="contact-link">🔒 Signal Manager</a></p><p>🕒 <strong>Working Hours:</strong> ' + (cfg.hours || "9h – 21h (UTC+3)") + '</p><p>Your manager will assist you with deposit verification, withdrawal requests, level upgrades, and daily support.</p>';
                 }
             }
-            return `<p><em>⚠️ Contact information not configured. Please contact your manager directly.</em></p><p>If you are an admin, create a <code>contact-config.js</code> file in the site root with a <code>contacts</code> array or <code>telegram/signal</code> fields.</p>`;
+            return '<p><em>⚠️ Contact information not configured. Please contact your manager directly.</em></p>';
         }
 
         function buildActivityListHTML() {
             if (!ACTIVITIES || ACTIVITIES.length === 0) {
-                return `<p style="text-align:center;padding:40px 0;color:var(--text-muted);">📭 No activities at this time. Please check back later.</p>`;
+                return '<p style="text-align:center;padding:40px 0;color:var(--text-muted);">📭 No activities at this time. Please check back later.</p>';
             }
-            let html = `<div style="max-width:600px;margin:0 auto;"><p style="color:var(--text-secondary);margin-bottom:20px;">Select an activity below to view details:</p>`;
-            ACTIVITIES.forEach(act => {
-                const statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
-                const statusText = act.status === 'በሂደት ላይ ነው' ? 'Active' : (act.status || 'Active');
-                html += `<div class="activity-list-item" onclick="showDetail('activity-${act.id}')">
-                    <span class="activity-title">${act.title}</span>
-                    <span class="activity-status ${statusClass}">${statusText}</span>
-                </div>`;
+            var html = '<div style="max-width:600px;margin:0 auto;"><p style="color:var(--text-secondary);margin-bottom:20px;">Select an activity below to view details:</p>';
+            ACTIVITIES.forEach(function(act) {
+                var statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
+                var statusText = act.status === 'በሂደት ላይ ነው' ? 'Active' : (act.status || 'Active');
+                html += '<div class="activity-list-item" onclick="showDetail(\'activity-' + act.id + '\')">' +
+                    '<span class="activity-title">' + act.title + '</span>' +
+                    '<span class="activity-status ' + statusClass + '">' + statusText + '</span>' +
+                '</div>';
             });
-            html += `<div class="detail-actions" style="margin-top:24px;">
-                <button class="detail-btn detail-btn-primary" onclick="backToHome()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    Back to Guides
-                </button>
-            </div></div>`;
+            html += '<div class="detail-actions" style="margin-top:24px;">' +
+                '<button class="detail-btn detail-btn-primary" onclick="backToHome()">' +
+                '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>' +
+                ' Back to Guides' +
+                '</button>' +
+            '</div></div>';
             return html;
         }
 
         function buildActivityDetailHTML(act) {
-            let html = `<div style="max-width:600px;margin:0 auto;">`;
-            const statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
-            const statusText = act.status === 'በሂደት ላይ ነው' ? 'Active' : (act.status || 'Active');
-            html += `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
-                <span style="font-size:0.9rem;color:var(--text-muted);">📅 ${act.time || 'Permanent'}</span>
-                <span class="activity-status ${statusClass}" style="font-size:0.8rem;padding:4px 16px;">${statusText}</span>
-            </div>`;
+            var html = '<div style="max-width:600px;margin:0 auto;">';
+            var statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
+            var statusText = act.status === 'በሂደት ላይ ነው' ? 'Active' : (act.status || 'Active');
+            html += '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">' +
+                '<span style="font-size:0.9rem;color:var(--text-muted);">📅 ' + (act.time || 'Permanent') + '</span>' +
+                '<span class="activity-status ' + statusClass + '" style="font-size:0.8rem;padding:4px 16px;">' + statusText + '</span>' +
+            '</div>';
             if (act.image) {
-                html += `<div class="activity-detail-image">
-                    <img src="${act.image}" alt="${act.title}" onclick="openLightbox(this)">
-                </div>`;
+                html += '<div class="activity-detail-image">' +
+                    '<img src="' + act.image + '" alt="' + act.title + '" onclick="openLightbox(this)">' +
+                '</div>';
             }
             if (act.content) {
-                html += `<div style="margin-top:12px;">${act.content}</div>`;
+                html += '<div style="margin-top:12px;">' + act.content + '</div>';
             }
-            html += `<div class="detail-actions" style="margin-top:24px;">
-                <button class="detail-btn detail-btn-primary" onclick="showDetail('activity-center')">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    Back to Activity List
-                </button>
-            </div></div>`;
+            html += '<div class="detail-actions" style="margin-top:24px;">' +
+                '<button class="detail-btn detail-btn-primary" onclick="showDetail(\'activity-center\')">' +
+                '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>' +
+                ' Back to Activity List' +
+                '</button>' +
+            '</div></div>';
             return html;
         }
 
         // ============================================================
-        // ALL_CARDS
+        // ALL_CARDS (including contact-manager)
         // ============================================================
-        const ALL_CARDS = [
+        var ALL_CARDS = [
             { id: "activity-center", title: "📢 Activity Center", desc: "View and participate in current activities" },
             { id: "why-pg-safe", title: "Why is PG Secure?", desc: "Legal, stable, financial security, and verifiable" },
             { id: "deposit-earnings", title: "Earnings by Level", desc: "Daily earnings: 60 ETB (Junior), 280 ETB (VIP 1), 800 ETB (VIP 2), 2,500 ETB (VIP 3)" },
@@ -1503,75 +1502,74 @@ function switchLang(lang) {
         // ============================================================
         // RENDER & NAVIGATION
         // ============================================================
-        const homeContainer = document.getElementById('homeContainer');
-        const detailContainer = document.getElementById('detailContainer');
-        const cardsArea = document.getElementById('cardsArea');
-        const detailContentDiv = document.getElementById('detailContent');
-        const tocModal = document.getElementById('tocModal');
-        const tocToggleBtn = document.getElementById('headerTocBtn');
-        const closeTocBtn = document.getElementById('closeTocBtn');
-        const tocList = document.getElementById('tocList');
-        const toTopBtn = document.getElementById('toTopBtn');
-        let savedScrollY = 0;
-        let isTransitioning = false;
+        var homeContainer = document.getElementById('homeContainer');
+        var detailContainer = document.getElementById('detailContainer');
+        var cardsArea = document.getElementById('cardsArea');
+        var detailContentDiv = document.getElementById('detailContent');
+        var tocModal = document.getElementById('tocModal');
+        var tocToggleBtn = document.getElementById('headerTocBtn');
+        var closeTocBtn = document.getElementById('closeTocBtn');
+        var tocList = document.getElementById('tocList');
+        var toTopBtn = document.getElementById('toTopBtn');
+        var savedScrollY = 0;
+        var isTransitioning = false;
 
         function getCardIcon(cardId) {
-            const icons = {
-                'activity-center': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
-                'why-pg-safe': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
-                'deposit-earnings': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
-                'topup-steps': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>`,
-                'withdrawal-rules': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M6 14h6m-6 4h12M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" /></svg>`,
-                'why-topup': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
-                'task-steps': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>`,
-                'order-guide': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
-                'extra-earnings': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>`,
-                'platform-synergy': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
-                'order-block-reasons': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`,
-                'letter-to-team': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
-                'pg-rules': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
-                'contact-manager': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>`
+            var icons = {
+                'activity-center': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+                'why-pg-safe': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>',
+                'deposit-earnings': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+                'topup-steps': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>',
+                'withdrawal-rules': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M6 14h6m-6 4h12M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" /></svg>',
+                'why-topup': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+                'task-steps': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>',
+                'order-guide': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>',
+                'extra-earnings': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>',
+                'platform-synergy': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+                'order-block-reasons': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>',
+                'letter-to-team': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>',
+                'pg-rules': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>',
+                'contact-manager': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>'
             };
-            return icons[cardId] || `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>`;
+            return icons[cardId] || '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>';
         }
 
         function getVisibleIds() {
-            return ALL_CARDS.map(c => c.id);
+            return ALL_CARDS.map(function(c) { return c.id; });
         }
 
         function renderCards() {
             if (!cardsArea) return;
-            const visible = getVisibleIds();
+            var visible = getVisibleIds();
             cardsArea.innerHTML = '';
-            ALL_CARDS.forEach(card => {
-                if (!visible.includes(card.id)) return;
-                let article = ARTICLES[card.id];
+            ALL_CARDS.forEach(function(card) {
+                if (visible.indexOf(card.id) === -1) return;
+                var article = ARTICLES[card.id];
                 if (card.id === 'activity-center') {
                     article = ARTICLES['activity-center'];
                 }
-                const shortDesc = article ? article.meta : card.desc;
-                const iconSvg = getCardIcon(card.id);
-                const cardDiv = document.createElement('div');
+                var shortDesc = article ? article.meta : card.desc;
+                var iconSvg = getCardIcon(card.id);
+                var cardDiv = document.createElement('div');
                 cardDiv.className = 'card';
                 cardDiv.setAttribute('data-id', card.id);
-                cardDiv.innerHTML = `
-                    <div class="card-header">
-                        <h3>${iconSvg} ${card.title}</h3>
-                    </div>
-                    <div class="card-excerpt">${shortDesc}</div>
-                `;
+                cardDiv.innerHTML = 
+                    '<div class="card-header">' +
+                        '<h3>' + iconSvg + ' ' + card.title + '</h3>' +
+                    '</div>' +
+                    '<div class="card-excerpt">' + shortDesc + '</div>';
                 cardsArea.appendChild(cardDiv);
             });
         }
 
         function renderTOC() {
             if (!tocList) return;
-            const visibleIds = getVisibleIds();
+            var visibleIds = getVisibleIds();
             tocList.innerHTML = '';
-            ALL_CARDS.forEach(card => {
-                if (!visibleIds.includes(card.id)) return;
-                const li = document.createElement('li');
-                const a = document.createElement('a');
+            ALL_CARDS.forEach(function(card) {
+                if (visibleIds.indexOf(card.id) === -1) return;
+                var li = document.createElement('li');
+                var a = document.createElement('a');
                 a.href = '#';
                 a.textContent = card.title;
                 a.setAttribute('data-id', card.id);
@@ -1583,9 +1581,12 @@ function switchLang(lang) {
         function showDetail(articleId, fromBack) {
             if (isTransitioning) return;
             
-            if (articleId.startsWith('activity-') && articleId !== 'activity-center') {
-                const actId = articleId.replace('activity-', '');
-                const act = ACTIVITIES.find(a => a.id === actId);
+            if (articleId.indexOf('activity-') === 0 && articleId !== 'activity-center') {
+                var actId = articleId.replace('activity-', '');
+                var act = null;
+                for (var i = 0; i < ACTIVITIES.length; i++) {
+                    if (ACTIVITIES[i].id === actId) { act = ACTIVITIES[i]; break; }
+                }
                 if (act) {
                     ARTICLES['activity-' + act.id] = {
                         title: act.title,
@@ -1605,50 +1606,64 @@ function switchLang(lang) {
                 };
             }
             
-            const article = ARTICLES[articleId];
+            var article = ARTICLES[articleId];
+            if (!article && BUILTIN_CONTENT[articleId]) {
+                var cardTitle = '';
+                for (var j = 0; j < ALL_CARDS.length; j++) {
+                    if (ALL_CARDS[j].id === articleId) { cardTitle = ALL_CARDS[j].title; break; }
+                }
+                article = {
+                    title: cardTitle || articleId,
+                    meta: BUILTIN_CONTENT[articleId].meta || '',
+                    content: BUILTIN_CONTENT[articleId].content || '<p>Content not available.</p>'
+                };
+                ARTICLES[articleId] = article;
+            }
             if (!article) return;
             isTransitioning = true;
             savedScrollY = window.scrollY;
-            document.querySelector('.bot-banner').style.display = 'none'; 
             
-            let actionsHtml = '';
+            var banner = document.querySelector('.bot-banner');
+            if (banner) banner.style.display = 'none';
+            
+            var actionsHtml = '';
             if (articleId === 'contact-manager') {
-                actionsHtml = `<div class="detail-actions"><button class="detail-btn detail-btn-primary" onclick="backToHome()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg> Back to Guides</button></div>`;
-            } else if (articleId === 'activity-center' || articleId.startsWith('activity-')) {
+                actionsHtml = '<div class="detail-actions"><button class="detail-btn detail-btn-primary" onclick="backToHome()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg> Back to Guides</button></div>';
+            } else if (articleId === 'activity-center' || articleId.indexOf('activity-') === 0) {
                 actionsHtml = '';
             } else {
-                actionsHtml = `<div class="detail-actions">
-                    <button class="detail-btn" onclick="showDetail('contact-manager')">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:18px;height:18px;">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                        </svg>
-                        Contact Manager
-                    </button>
-                    <button class="detail-btn detail-btn-primary" onclick="backToHome()">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                        Back to Guides
-                    </button>
-                </div>`;
+                actionsHtml = '<div class="detail-actions">' +
+                    '<button class="detail-btn" onclick="showDetail(\'contact-manager\')">' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:18px;height:18px;">' +
+                        '<path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />' +
+                    '</svg>' +
+                    ' Contact Manager' +
+                    '</button>' +
+                    '<button class="detail-btn detail-btn-primary" onclick="backToHome()">' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>' +
+                    ' Back to Guides' +
+                    '</button>' +
+                '</div>';
             }
             
-            const detailIcon = getCardIcon(articleId);
-            let metaDisplay = article.meta || '';
+            var detailIcon = getCardIcon(articleId);
+            var metaDisplay = article.meta || '';
             if (articleId === 'activity-center') {
                 metaDisplay = 'Current Activities';
             }
-            const detailHtml = `<div class="detail-title"><span>${detailIcon} ${article.title}</span></div><div class="detail-meta">📌 ${metaDisplay}</div><div class="detail-text">${article.content}</div>${actionsHtml}`;
+            var detailHtml = '<div class="detail-title"><span>' + detailIcon + ' ' + article.title + '</span></div><div class="detail-meta">📌 ' + metaDisplay + '</div><div class="detail-text">' + article.content + '</div>' + actionsHtml;
             detailContentDiv.innerHTML = detailHtml;
             
-            const detailDiv = document.querySelector('.detail-view');
+            var detailDiv = document.querySelector('.detail-view');
             detailDiv.classList.remove('active');
             void detailDiv.offsetWidth;
             homeContainer.classList.add('view-exit');
-            setTimeout(() => {
+            setTimeout(function() {
                 homeContainer.classList.add('hidden');
                 detailContainer.classList.remove('hidden');
                 homeContainer.classList.remove('view-exit');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                if (!fromBack && history.pushState) history.pushState({ view: 'detail', id: articleId }, '', `#${articleId}`);
+                if (!fromBack && history.pushState) history.pushState({ view: 'detail', id: articleId }, '', '#' + articleId);
                 detailDiv.classList.add('active');
                 isTransitioning = false;
             }, 200);
@@ -1657,13 +1672,14 @@ function switchLang(lang) {
         function backToHome() {
             if (isTransitioning) return;
             isTransitioning = true;
-            const detailDiv = document.querySelector('.detail-view');
+            var detailDiv = document.querySelector('.detail-view');
             if (detailDiv) detailDiv.classList.remove('active');
             detailContainer.classList.add('view-exit');
-            setTimeout(() => {
+            setTimeout(function() {
                 detailContainer.classList.add('hidden');
                 homeContainer.classList.remove('hidden');
-                document.querySelector('.bot-banner').style.display = 'block';
+                var banner = document.querySelector('.bot-banner');
+                if (banner) banner.style.display = 'block';
                 detailContainer.classList.remove('view-exit');
                 if (savedScrollY) window.scrollTo({ top: savedScrollY, behavior: 'auto' });
                 if (location.hash) {
@@ -1687,8 +1703,8 @@ function switchLang(lang) {
                 if (lightbox.style.display === 'flex') closeLightbox();
                 else if (tocModal.classList.contains('active')) tocModal.classList.remove('active');
                 else if (!detailContainer.classList.contains('hidden')) {
-                    const hash = location.hash.slice(1);
-                    if (hash && hash.startsWith('activity-') && hash !== 'activity-center') {
+                    var hash = location.hash.slice(1);
+                    if (hash && hash.indexOf('activity-') === 0 && hash !== 'activity-center') {
                         showDetail('activity-center');
                     } else {
                         backToHome();
@@ -1704,46 +1720,46 @@ function switchLang(lang) {
         document.getElementById('floatingContactBtn').addEventListener('click', function() {
             if (!detailContainer.classList.contains('hidden')) {
                 backToHome();
-                setTimeout(() => showDetail('contact-manager'), 100);
+                setTimeout(function() { showDetail('contact-manager'); }, 100);
             } else {
                 showDetail('contact-manager');
             }
         });
 
         cardsArea.addEventListener('click', function(e) {
-            const card = e.target.closest('.card');
+            var card = e.target.closest('.card');
             if (!card) return;
-            const id = card.getAttribute('data-id');
+            var id = card.getAttribute('data-id');
             if (id) showDetail(id);
         });
 
-        tocToggleBtn.addEventListener('click', () => tocModal.classList.add('active'));
-        closeTocBtn.addEventListener('click', () => tocModal.classList.remove('active'));
-        tocModal.addEventListener('click', (e) => { if (e.target === tocModal) tocModal.classList.remove('active'); });
-        tocList.addEventListener('click', (e) => {
-            const a = e.target.closest('a');
+        tocToggleBtn.addEventListener('click', function() { tocModal.classList.add('active'); });
+        closeTocBtn.addEventListener('click', function() { tocModal.classList.remove('active'); });
+        tocModal.addEventListener('click', function(e) { if (e.target === tocModal) tocModal.classList.remove('active'); });
+        tocList.addEventListener('click', function(e) {
+            var a = e.target.closest('a');
             if (!a) return;
             e.preventDefault();
-            const id = a.getAttribute('data-id');
+            var id = a.getAttribute('data-id');
             if (!id) return;
             tocModal.classList.remove('active');
             if (!detailContainer.classList.contains('hidden')) {
                 backToHome();
-                setTimeout(() => showDetail(id), 100);
+                setTimeout(function() { showDetail(id); }, 100);
             } else {
-                const targetCard = document.querySelector(`.card[data-id="${id}"]`);
+                var targetCard = document.querySelector('.card[data-id="' + id + '"]');
                 if (targetCard) {
                     targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     targetCard.classList.add('card-highlight');
-                    setTimeout(() => targetCard.classList.remove('card-highlight'), 800);
+                    setTimeout(function() { targetCard.classList.remove('card-highlight'); }, 800);
                 } else {
                     showDetail(id);
                 }
             }
         });
 
-        window.addEventListener('popstate', (e) => {
-            const state = e.state;
+        window.addEventListener('popstate', function(e) {
+            var state = e.state;
             if (state && state.view === 'detail' && state.id && ARTICLES[state.id]) {
                 showDetail(state.id, true);
             } else if (!detailContainer.classList.contains('hidden')) {
@@ -1752,7 +1768,7 @@ function switchLang(lang) {
         });
 
         function initRouting() {
-            const hash = location.hash.slice(1);
+            var hash = location.hash.slice(1);
             if (hash && ARTICLES[hash]) showDetail(hash);
             else { homeContainer.classList.remove('hidden'); detailContainer.classList.add('hidden'); }
         }
@@ -1761,27 +1777,78 @@ function switchLang(lang) {
         // LOAD DATA AND START
         // ============================================================
         Promise.all([
-            fetch('data/cards.json?t=' + Date.now()).then(res => {
+            fetch('data/cards.json?t=' + Date.now()).then(function(res) {
                 if (!res.ok) throw new Error('Failed to load cards.json');
                 return res.json();
             }),
-            fetch('data/activities.json?t=' + Date.now()).then(res => {
+            fetch('data/activities.json?t=' + Date.now()).then(function(res) {
                 if (!res.ok) return [];
                 return res.json();
-            }).catch(() => [])
+            }).catch(function() { return []; })
         ])
-        .then(([cardsData, activitiesData]) => {
+        .then(function(results) {
+            var cardsData = results[0];
+            var activitiesData = results[1];
             CARDS_DATA = cardsData;
             ACTIVITIES = activitiesData || [];
-            buildArticlesFromData();
+            CARDS_DATA.forEach(function(card) {
+                if (card.id && card.content) {
+                    ARTICLES[card.id] = {
+                        title: card.title || (function() { for (var k = 0; k < ALL_CARDS.length; k++) { if (ALL_CARDS[k].id === card.id) return ALL_CARDS[k].title; } return card.id; })(),
+                        meta: card.meta || '',
+                        content: card.content
+                    };
+                }
+            });
+            ALL_CARDS.forEach(function(card) {
+                if (!ARTICLES[card.id] && BUILTIN_CONTENT[card.id]) {
+                    ARTICLES[card.id] = {
+                        title: card.title,
+                        meta: BUILTIN_CONTENT[card.id].meta || '',
+                        content: BUILTIN_CONTENT[card.id].content
+                    };
+                }
+            });
+            if (!ARTICLES['contact-manager'] && BUILTIN_CONTENT['contact-manager']) {
+                ARTICLES['contact-manager'] = {
+                    title: "Contact Manager",
+                    meta: BUILTIN_CONTENT['contact-manager'].meta,
+                    content: BUILTIN_CONTENT['contact-manager'].content
+                };
+            }
             renderCards();
             renderTOC();
             initRouting();
             checkScrollForToTop();
         })
-        .catch(err => {
+        .catch(function(err) {
             console.error('Error loading data:', err);
-            cardsArea.innerHTML = `<div style="padding:40px;text-align:center;color:var(--text-muted);">⚠️ Unable to load content. Please try again.</div>`;
+            ALL_CARDS.forEach(function(card) {
+                if (BUILTIN_CONTENT[card.id]) {
+                    ARTICLES[card.id] = {
+                        title: card.title,
+                        meta: BUILTIN_CONTENT[card.id].meta || '',
+                        content: BUILTIN_CONTENT[card.id].content
+                    };
+                } else if (card.id === 'activity-center') {
+                    ARTICLES['activity-center'] = {
+                        title: "📢 Activity Center",
+                        meta: "View and participate in current activities",
+                        content: buildActivityListHTML()
+                    };
+                }
+            });
+            if (!ARTICLES['contact-manager'] && BUILTIN_CONTENT['contact-manager']) {
+                ARTICLES['contact-manager'] = {
+                    title: "Contact Manager",
+                    meta: BUILTIN_CONTENT['contact-manager'].meta,
+                    content: BUILTIN_CONTENT['contact-manager'].content
+                };
+            }
+            renderCards();
+            renderTOC();
+            initRouting();
+            checkScrollForToTop();
         });
     })();
 </script>
