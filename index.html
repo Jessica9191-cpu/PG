@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>ፒጂ ኢርን – ዕለታዊ ኮሚሽን</title>
     <meta property="og:title" content="ፒጂ ኢርን – ዕለታዊ ኮሚሽን">
-    <meta property="og:description" content="የፒጂ መመሪያ ማዕከል – የመድረክ መግለጫ፣ ደህንነት፣ የተቀማጭ/መውጫ ህጎች እና ደረጃ በደረጃ መመሪያዎች። 8 ዓመታት የተረጋጋ፣ ግልጽ እና ህጋዊ አሰራር።">
+    <meta property="og:description" content="የፒጂ መመሪያ ማዕከል – የመድረክ አጠቃላይ እይታ፣ ደህንነት፣ የተቀማጭ እና የማውጣት ህጎች፣ እንዲሁም ደረጃ በደረጃ መመሪያዎች። 8 ዓመታት የተረጋጋ፣ ግልጽ እና ህጋዊ አሰራር።">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ፒጂ ኢርን – ዕለታዊ ኮሚሽን">
-    <meta name="twitter:description" content="ዕለታዊ ኮሚሽን ያግኙ። 8 ዓመታት የተረጋጋ አገልግሎት። ተግባራትን ያከናውኑ፣ ገቢዎችን በቀላሉ ያውጡ።">
+    <meta name="twitter:description" content="ዕለታዊ ኮሚሽን ያግኙ። 8 ዓመታት የተረጋጋ አገልግሎት። ተግባራትን ያጠናቅቁ፣ ገቢን በቀላሉ ያውጡ።">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E💰%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -144,51 +144,6 @@
             background: #e2e8f0;
         }
         .glass-btn:active {
-            transform: scale(0.96);
-        }
-        .bot-banner {
-            background: linear-gradient(135deg, #0088cc, #005f8a);
-            border-radius: 24px;
-            padding: 24px 28px;
-            margin-bottom: 32px;
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 12px;
-            box-shadow: var(--shadow-md);
-        }
-        .bot-banner h2 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 0;
-        }
-        .bot-banner p {
-            margin: 0;
-            opacity: 0.9;
-            font-size: 1rem;
-        }
-        .bot-banner .bot-btn {
-            background: white;
-            color: #0088cc;
-            border: none;
-            padding: 14px 32px;
-            border-radius: 60px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-        .bot-banner .bot-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        .bot-banner .bot-btn:active {
             transform: scale(0.96);
         }
         .intro-section {
@@ -761,7 +716,6 @@
             border-radius: 12px;
             cursor: pointer;
         }
-        /* Language Panel */
         .lang-panel {
             position: fixed;
             top: 0;
@@ -1004,27 +958,21 @@
 <div class="wrapper">
     <div class="header">
         <h1>💰 ፒጂ ኢርን – ዕለታዊ ኮሚሽን</h1>
-        <p>ለብራንዶች ትዕዛዞችን ያስገቡ — በየቀኑ ይስሩ</p>
+        <p>ለብራንዶች ትዕዛዝ ያስገቡ — በየቀኑ ይስሩ</p>
     </div>
     <div class="header-actions">
         <button id="headerTocBtn" class="glass-btn">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h7" />
             </svg>
-            ዝርዝር ሁኔታ
+            ይዘቶች
         </button>
         <button class="glass-btn" onclick="toggleLangPanel()" style="text-decoration:none;">
-            🇬🇧 English
+            🇪🇹 አማርኛ
         </button>
     </div>
 
-    <div class="bot-banner">
-        <h2>📲 የቴሌግራም ቦትን ይከተሉ</h2>
-        <p>የዕለት ተዕለት እንቅስቃሴዎችን፣ የግብዣ ሊንክዎን እና ሌሎች መረጃዎችን ለማግኘት ቦቱን ይጫኑ።</p>
-        <a href="https://t.me/PG_ET_bot" target="_blank" rel="noopener noreferrer" class="bot-btn">
-            ✈️ አሁን ይከተሉ
-        </a>
-    </div>
+    <!-- BOT BANNER REMOVED -->
 
     <div id="homeContainer">
         <div class="intro-section">
@@ -1032,99 +980,99 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                ፒጂ (PG) ምንድን ነው?
+                ፒጂ ምንድን ነው?
             </div>
             <div class="intro-excerpt">
-                <strong>ፒጂ (PG Playground)</strong> በኮሎራዶ፣ ዩኤስኤ በህጋዊ መንገድ የተመዘገበ የቴክኖሎጂ አገልግሎት ኩባንያ ሲሆን ከ2018 ጀምሮ በተሳካ ሁኔታ እየሰራ ይገኛል።<br>
-                በእውነተኛ ትዕዛዞች አማካኝነት ለዓለም አቀፍ ብራንዶች የመስመር ላይ የግብይት ዳታ አገልግሎቶችን እናቀርባለን። ተልዕኳችን፡ ለነጋዴዎች ታይነት እና የሽያጭ መጠን ማሳደግ፣ ለተጠቃሚዎቻችን ደግሞ በተጠናቀቀ ተግባር ላይ አውቶማቲክ ኮሚሽን ማግኘት ማስቻል ነው።<br>
-                <strong>ይህ እውነተኛ እና ተደራሽ ስራ ነው።</strong> የእርስዎ ተቀማጭ ሙሉ በሙሉ በማንኛውም ጊዜ የሚመለስ የስራ ካፒታል ነው።
+                <strong>ፒጂ (ፒጂ ፕሌይግራውንድ)</strong> በኮሎራዶ፣ አሜሪካ ውስጥ በህጋዊ መንገድ የተመዘገበ የቴክኖሎጂ አገልግሎት ኩባንያ ሲሆን ከ2018 ዓ.ም ጀምሮ በተሳካ ሁኔታ እየሰራ ይገኛል።<br>
+                በእውነተኛ ትዕዛዞች አማካኝነት ለአለም አቀፍ ብራንዶች የመስመር ላይ የግብይት መረጃ አገልግሎት እንሰጣለን። ተልዕኮአችን፦ ለነጋዴዎች ታይነት እና ሽያጭ ማሳደግ፣ በተመሳሳይ ጊዜ ተጠቃሚዎቻችን በተጠናቀቁ ተግባራት ላይ አውቶማቲክ ኮሚሽን እንዲያገኙ ማስቻል ነው።<br>
+                <strong>ይህ እውነተኛ እና ተደራሽ ስራ ነው።</strong> የእርስዎ ተቀማጭ ገንዘብ በማንኛውም ጊዜ ሙሉ በሙሉ የሚመለስ የስራ ካፒታል ነው።
             </div>
-            <button class="intro-link" onclick="showDetail('what-is-pg')">ሙሉ ይመልከቱ →</button>
+            <button class="intro-link" onclick="showDetail('what-is-pg')">ሙሉ ዝርዝሮችን ይመልከቱ →</button>
             
             <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 20px 0 0; font-size: 0.75rem; color: var(--text-muted); border-top: 1px solid var(--border-light); padding-top: 16px;">
-                <span>📱 ስልክ ብቻ</span>
+                <span>📱 በሞባይል ብቻ</span>
                 <span>·</span>
-                <span>✅ ምንም ልምድ አያስፈልግም</span>
+                <span>✅ ልምድ አያስፈልግም</span>
                 <span>·</span>
-                <span>💬 ቴሌግራም መጠቀም ማወቅ</span>
+                <span>💬 ቴሌግራም መጠቀም መቻል</span>
                 <span>·</span>
-                <span>🇪🇹 አማርኛ ማንበብ</span>
+                <span>🇬🇧 እንግሊዝኛ ማንበብ</span>
             </div>
         </div>
 
         <div style="background: var(--level-card-bg); border-radius: 24px; padding: 20px; margin-bottom: 32px; text-align: center;">
-            <h3 style="margin-bottom: 20px;">📋 በ3 ቀላል ደረጃዎች እንዴት እንደሚሰራ</h3>
+            <h3 style="margin-bottom: 20px;">📋 በ3 ቀላል እርከኖች እንዴት እንደሚሰራ</h3>
             <div class="steps-container" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
                 <div class="step-item" style="flex: 1; min-width: 150px;">
                     <div style="background: var(--badge-color); width: 40px; height: 40px; border-radius: 40px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-bottom: 8px;">1</div>
                     <div><strong>ተግባሩን ይቀበሉ</strong></div>
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">ብራንዶች ሊረጋገጡ የሚገባቸውን ትዕዛዞች ያወጣሉ።</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">ብራንዶች ማረጋገጫ የሚያስፈልጋቸው ትዕዛዞችን ይለጥፋሉ።</div>
                 </div>
                 <div class="step-item" style="flex: 1; min-width: 150px;">
                     <div style="background: var(--badge-color); width: 40px; height: 40px; border-radius: 40px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-bottom: 8px;">2</div>
                     <div><strong>ትዕዛዙን ያረጋግጡ</strong></div>
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">"ግዛ" ን ጠቅ ያድርጉ እና የትዕዛዝ ማስገቢያውን ያረጋግጡ።</div>
-                    <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 6px;">(ምንም አካላዊ ምርት አይላክም – የግብይት ዳታ ማረጋገጫ ነው።)</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">"ግዛ" የሚለውን ጠቅ ያድርጉ እና ትዕዛዙን ያስገቡ።</div>
+                    <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 6px;">(አካላዊ ምርት አይላክም – የግብይት መረጃ ማረጋገጫ ነው።)</div>
                 </div>
                 <div class="step-item" style="flex: 1; min-width: 150px;">
                     <div style="background: var(--badge-color); width: 40px; height: 40px; border-radius: 40px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-bottom: 8px;">3</div>
                     <div><strong>ኮሚሽንዎን ይቀበሉ</strong></div>
-                    <div style="font-size: 0.8rem; color: var(--text-muted);">ጊዜው ካለፈ በኋላ ገንዘቡ በመለያዎ ላይ ይገኛል።</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">ጊዜው ሲያልቅ ገንዘቦች ወደ መለያዎ ይጨመራሉ።</div>
                     <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 6px;">(የእርስዎ ተቀማጭ ሙሉ በሙሉ የሚመለስ የስራ ካፒታል ሆኖ ይቆያል።)</div>
                 </div>
             </div>
 
             <div style="margin: 24px 0 16px;">
-                <h4 style="margin-bottom: 12px;">💰 እንደ ደረጃዎ በየቀኑ ያግኙ</h4>
+                <h4 style="margin-bottom: 12px;">💰 እንደ ደረጃዎ ዕለታዊ ገቢ ያግኙ</h4>
                 <table class="income-table">
                     <thead>
-                        <tr><th>ደረጃ</th><th>መሙያ (ETB)</th><th>ዕለታዊ ገቢ</th><th>ዝቅተኛ መውጫ</th></tr>
+                        <tr><th>ደረጃ</th><th>ተቀማጭ (ብር)</th><th>ዕለታዊ ገቢ</th><th>ዝቅተኛ ማውጫ</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>ጁኒየር ሰራተኞች</td><td>3,600</td><td>60</td><td>300</td></tr>
-                        <tr><td>VIP 1</td><td>9,000</td><td>280</td><td>1,400</td></tr>
-                        <tr><td>VIP 2</td><td>24,000</td><td>800</td><td>4,000</td></tr>
-                        <tr><td>VIP 3</td><td>68,000</td><td>2,500</td><td>12,500</td></tr>
+                        <tr><td>ጁኒየር ሰራተኛ</td><td>3,600</td><td>60</td><td>300</td></tr>
+                        <tr><td>ቪአይፒ 1</td><td>9,000</td><td>280</td><td>1,400</td></tr>
+                        <tr><td>ቪአይፒ 2</td><td>24,000</td><td>800</td><td>4,000</td></tr>
+                        <tr><td>ቪአይፒ 3</td><td>68,000</td><td>2,500</td><td>12,500</td></tr>
                     </tbody>
                 </table>
-                <div style="font-size: 0.7rem; color: var(--text-muted);">💡 ጠቃሚ መረጃ፡ የእያንዳንዱ ደረጃ (ጁኒየር ሰራተኞች ወይም VIP) ማግበር የመውጫ መብትዎን በቋሚነት እና ለህይወት ዘመን የሚከፍት አንድ ጊዜ ኢንቨስትመንት ነው።</div>
+                <div style="font-size: 0.7rem; color: var(--text-muted);">💡 እያንዳንዱን ደረጃ (ጁኒየር ወይም ቪአይፒ) ማግበር የማውጫ መብቶችዎን ለህይወት በሙሉ የሚከፍት የአንድ ጊዜ ኢንቨስትመንት ነው።</div>
             </div>
 
             <div style="margin-top: 20px; padding: 12px; background: var(--badge-bg); border-radius: 60px;">
-                <strong>🎯 ደረጃ 4፡ መለያዎን አሁን ያግብሩ</strong><br>
-                <span style="font-size: 0.85rem;">ለመጀመር እባክዎ ከታች ያለውን አዝራር ጠቅ በማድረግ በቴሌግራም የምልመላ ሃላፊያችንን ያግኙ። ሃላፊው በሙሉ ሂደቱ ውስጥ ያማክሩዎታል።</span>
+                <strong>🎯 ደረጃ 4፦ መለያዎን አሁን ያግብሩ</strong><br>
+                <span style="font-size: 0.85rem;">ከዚህ በታች ያለውን ቁልፍ ጠቅ ያድርጉ በቴሌግራም የምልመላ አስተዳዳሪያችንን ለማግኘት። አስተዳዳሪው ሙሉውን ሂደት ይመራዎታል።</span>
             </div>
             <div style="margin-top: 16px;">
                 <button class="detail-btn detail-btn-primary" style="background: var(--badge-color); border: none; padding: 12px 24px;" onclick="showDetail('contact-manager')">
-                    ✈️ ሃላፊውን ያነጋግሩ እና ይጀምሩ
+                    ✈️ አስተዳዳሪን ያግኙ እና ይጀምሩ
                 </button>
             </div>
             <div style="font-size: 0.7rem; color: var(--text-muted); margin-top: 12px;">
-                📅 ትዕዛዞች የሚገኙበት ቀን፡ <strong>ከሰኞ እስከ ቅዳሜ</strong> (እሁድ ዕረፍት)።
+                📅 ትዕዛዞች የሚገኙበት ቀን፦ <strong>ሰኞ – ቅዳሜ</strong> (እሁድ እረፍት)።
             </div>
         </div>
 
         <div id="cardsArea" class="card-grid"></div>
         
         <div style="background: var(--bg-card); border-radius: 20px; padding: 24px; margin: 32px 0; box-shadow: var(--shadow-sm);">
-            <h3 style="margin-bottom: 20px; text-align: center;">❓ ተደጋጋሚ ጥያቄዎች (FAQ)</h3>
+            <h3 style="margin-bottom: 20px; text-align: center;">❓ በተደጋጋሚ የሚጠየቁ ጥያቄዎች</h3>
             <div style="display: flex; flex-direction: column; gap: 24px;">
                 <div>
-                    <strong>ጥ: የሆነ ነገር መክፈል አለብኝ?</strong>
-                    <p style="margin-top: 6px; color: var(--text-secondary);">መ: ምዝገባው <strong>ነጻ</strong> ነው። የሚጠየቀው ተቀማጭ ሲያቆሙ ወይም ወደ ላቀ ደረጃ ሲያልፉ ሙሉ በሙሉ የሚመለስ የስራ ካፒታል ነው።</p>
+                    <strong>ጥ፡ ምንም ነገር መክፈል አለብኝ?</strong>
+                    <p style="margin-top: 6px; color: var(--text-secondary);">መ፡ ምዝገባ <strong>ነፃ</strong> ነው። የሚጠየቀው ተቀማጭ ወደ ላይ ደረጃ ሲያሳድጉ ወይም ሲያወጡ ሙሉ በሙሉ የሚመለስ የስራ ካፒታል ነው።</p>
                 </div>
                 <div>
-                    <strong>ጥ: ኩባንያው በዩኤስኤ የተመዘገበው ለምንድን ነው?</strong>
-                    <p style="margin-top: 6px; color: var(--text-secondary);">መ: እንደ ዓለም አቀፍ መድረክ፣ ፒጂ ከዓለም ዙሪያ ካሉ ብራንዶች ጋር በመተባበር ለተጠቃሚዎቹ በCBE እና ቴሌብር በኩል ገቢያቸውን በአገር ውስጥ ምንዛሬ እንዲያገኙ ያስችላቸዋል።</p>
+                    <strong>ጥ፡ ኩባንያው በአሜሪካ የተመዘገበው ለምንድነው?</strong>
+                    <p style="margin-top: 6px; color: var(--text-secondary);">መ፡ እንደ አለም አቀፍ መድረክ፣ ፒጂ ከመላው አለም ካሉ ብራንዶች ጋር በመተባበር ተጠቃሚዎች ገቢን በሀገር ውስጥ ምንዛሪ በሲቢኢ እና በቴሌብር እንዲያወጡ ያስችላል።</p>
                 </div>
                 <div>
-                    <strong>ጥ: ሃላፊውን በቴሌግራም ለምን ማነጋገር አለብኝ?</strong>
-                    <p style="margin-top: 6px; color: var(--text-secondary);">መ: ለመለያዎ ደህንነት ነው። ሃላፊው ማንነትዎን ያረጋግጣል እና ኮሚሽኖችዎን ያለመዘግየት በትክክል እንዲቀበሉ ያረጋግጣል።</p>
+                    <strong>ጥ፡ አስተዳዳሪውን በቴሌግራም ለምን ማነጋገር አለብኝ?</strong>
+                    <p style="margin-top: 6px; color: var(--text-secondary);">መ፡ ለመለያዎ ደህንነት ነው። አስተዳዳሪው ማንነትዎን ያረጋግጣል እና ኮሚሽኖችዎን በትክክል እና ያለመዘግየት እንዲያገኙ ያረጋግጣል።</p>
                 </div>
             </div>
         </div>
 
-        <footer>✅ ለዝርዝር መመሪያ ማንኛውንም ካርድ ይምረጡ</footer>
+        <footer>✅ ለዝርዝር መመሪያዎች ማንኛውንም ካርድ ጠቅ ያድርጉ</footer>
     </div>
     <div id="detailContainer" class="hidden">
         <div class="detail-view">
@@ -1134,10 +1082,10 @@
     </div>
 
     <div class="disclaimer" style="text-align: center; font-size: 0.7rem; color: var(--footer-color); margin-top: 20px; padding: 12px 0 8px; border-top: 1px solid var(--divider);">
-        ይህ ጣቢያ በኢትዮጵያ ላሉ አዲስ የፒጂ ተጠቃሚዎች ገለልተኛ መመሪያ ነው። ለግል እርዳታ እባክዎ በቴሌግራም ላይ ያለውን ፈቃድ ያለው ሃላፊዎን ብቻ ይመልከቱ።
+        ይህ ጣቢያ በኢትዮጵያ ውስጥ ለአዲስ የፒጂ ተጠቃሚዎች ራሱን የቻለ መመሪያ ነው። ለግል እርዳታ እባክዎን የተፈቀደላቸውን አስተዳዳሪዎን በቴሌግራም ብቻ ያነጋግሩ።
     </div>
 </div>
-<div id="floatingContactBtn" class="floating-contact" title="ሃላፊውን ያነጋግሩ">
+<div id="floatingContactBtn" class="floating-contact" title="አስተዳዳሪን ያግኙ">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
     </svg>
@@ -1149,24 +1097,24 @@
 </div>
 <div id="tocModal" class="toc-modal">
     <div class="toc-content">
-        <h4>📖 ዝርዝር ሁኔታ</h4>
+        <h4>📖 የይዘት ማውጫ</h4>
         <ul id="tocList" class="toc-list"></ul>
         <button id="closeTocBtn" style="margin-top:16px; width:100%; padding:8px; border-radius:40px; border:1px solid var(--border-light); background:var(--badge-color); color:white; cursor:pointer;">ዝጋ</button>
     </div>
 </div>
 <div id="lightbox" class="lightbox">
     <div class="lightbox-content" id="lightboxContent">
-        <img id="lightbox-img" src="" alt="ሙሉ ስክሪን">
+        <img id="lightbox-img" src="" alt="ሙሉ ማያ ገጽ">
     </div>
     <button class="lightbox-close" id="lightboxCloseBtn" aria-label="ዝጋ">✕</button>
     <div class="zoom-controls">
         <button id="zoomOutBtn" title="አጉላ">−</button>
-        <button id="zoomResetBtn" title="ወደ መጀመሪያ መልስ">⟲</button>
-        <button id="zoomInBtn" title="አሳጥር">+</button>
+        <button id="zoomResetBtn" title="ወደ መጀመሪያ">⟲</button>
+        <button id="zoomInBtn" title="አብሳ">+</button>
     </div>
 </div>
 
-<!-- Language Panel -->
+<!-- የቋንቋ መምረጫ -->
 <div id="langPanel" class="lang-panel">
     <div class="lang-overlay" onclick="toggleLangPanel()"></div>
     <div class="lang-box">
@@ -1176,16 +1124,26 @@
             <span class="lang-check" id="langCheckAm">✅</span>
         </div>
         <div class="lang-option" onclick="switchLang('en')">
-            <span>🇬🇧 English</span>
+            <span>🇬🇧 እንግሊዝኛ</span>
             <span class="lang-check" id="langCheckEn"></span>
         </div>
         <button class="lang-close" onclick="toggleLangPanel()">✕ ዝጋ</button>
     </div>
 </div>
 
-<script src="contact-config.js"></script>
 <script>
     (function() {
+        // ============================================================
+        // CONTACT CONFIG — INLINE
+        // ============================================================
+        window.CONTACT_CONFIG = {
+            hours: "9h – 21h (UTC+3) ｜ በኢትዮጵያ አቆጣጠር፡ ከጠዋቱ 3፡00 - ከምሽቱ 3፡00",
+            contacts: [
+                { name: "ጄሲካ (ዋና)",   url: "https://t.me/PGJessica",      icon: "📱" },
+                { name: "ጄሲካ (መጠባበቂያ)", url: "https://t.me/PG91Jessica91",  icon: "📱" }
+            ]
+        };
+
         // ============================================================
         // LANGUAGE SWITCHER
         // ============================================================
@@ -1201,14 +1159,14 @@
             }
         }
 
-function switchLang(lang) {
-    var basePath = window.location.pathname.split('/').slice(0, 2).join('/');
-    if (lang === 'am') {
-        window.location.href = basePath + '/';
-    } else if (lang === 'en') {
-        window.location.href = basePath + '/en/';
-    }
-}
+        function switchLang(lang) {
+            var basePath = window.location.pathname.split('/').slice(0, 2).join('/');
+            if (lang === 'am') {
+                window.location.href = basePath + '/';
+            } else if (lang === 'en') {
+                window.location.href = basePath + '/en/';
+            }
+        }
 
         window.toggleLangPanel = toggleLangPanel;
         window.switchLang = switchLang;
@@ -1397,187 +1355,221 @@ function switchLang(lang) {
         let ARTICLES = {};
         let ACTIVITIES = [];
 
-        function buildArticlesFromData() {
-            ARTICLES = {};
-            CARDS_DATA.forEach(card => {
-                ARTICLES[card.id] = {
-                    title: card.title,
-                    meta: card.meta,
-                    content: card.content
-                };
-            });
-            ARTICLES['contact-manager'] = {
-                title: "ሃላፊውን ያነጋግሩ",
-                meta: "ለተቀማጭ/መውጫ/ማሻሻያ ቀጥተኛ ድጋፍ",
+        // Built-in fallback content (አማርኛ)
+        const BUILTIN_CONTENT = {
+            'why-pg-safe': {
+                meta: "ህጋዊ፣ የተረጋጋ፣ የገንዘብ ደህንነት እና ሊረጋገጥ የሚችል",
+                content: "<p><strong>ፒጂ (ፒጂ ፕሌይግራውንድ)</strong> በኮሎራዶ፣ አሜሪካ ውስጥ በህጋዊ መንገድ የተመዘገበ የቴክኖሎጂ አገልግሎት ኩባንያ ሲሆን ከ2018 ዓ.ም ጀምሮ እየሰራ ይገኛል። ሁሉም የተጠቃሚ ገንዘቦች በተለዩ መለያዎች ውስጥ ይቀመጣሉ፣ ይህም የእርስዎ የስራ ካፒታል ደህንነቱ የተጠበቀ እና በማንኛውም ጊዜ ሙሉ በሙሉ የሚመለስ መሆኑን ያረጋግጣል።</p>"
+            },
+            'deposit-earnings': {
+                meta: "ዕለታዊ ገቢ፦ 60 ብር (ጁኒየር)፣ 280 ብር (ቪአይፒ 1)፣ 800 ብር (ቪአይፒ 2)፣ 2,500 ብር (ቪአይፒ 3)",
+                content: "<table class='income-table'><thead><tr><th>ደረጃ</th><th>ተቀማጭ (ብር)</th><th>ዕለታዊ ገቢ</th><th>ዝቅተኛ ማውጫ</th></tr></thead><tbody><tr><td>ጁኒየር ሰራተኛ</td><td>3,600</td><td>60</td><td>300</td></tr><tr><td>ቪአይፒ 1</td><td>9,000</td><td>280</td><td>1,400</td></tr><tr><td>ቪአይፒ 2</td><td>24,000</td><td>800</td><td>4,000</td></tr><tr><td>ቪአይፒ 3</td><td>68,000</td><td>2,500</td><td>12,500</td></tr></tbody></table>"
+            },
+            'topup-steps': {
+                meta: "አስተዳዳሪን ያነጋግሩ → ያስተላልፉ → ያረጋግጡ → ክሬዲት ይቀበሉ",
+                content: "<ol><li>አስተዳዳሪዎን በቴሌግራም ወይም በሲግናል ያነጋግሩ።</li><li>የሚፈለገውን የተቀማጭ ገንዘብ ወደ ተሰጠው የባንክ መለያ (ሲቢኢ ወይም ቴሌብር) ያስተላልፉ።</li><li>የዝውውር ቅጽበታዊ ገጽ እይታ (ስክሪንሾት) ለአስተዳዳሪው ይላኩ ለማረጋገጫ።</li><li>ገንዘቦች በ10 ደቂቃ ውስጥ ወደ መድረክ መለያዎ ይጨመራሉ።</li></ol>"
+            },
+            'withdrawal-rules': {
+                meta: "ሰኞ–አርብ ብቻ፣ በ1–4 ቀናት ውስጥ ይደርሳል",
+                content: "<p>ማውጫዎች የሚከናወኑት <strong>ሰኞ እስከ አርብ</strong> (በሳምንቱ መጨረሻ አይደለም) ነው። ገንዘቦች በተለምዶ በ<strong>1 እስከ 4 የስራ ቀናት</strong> ውስጥ ወደ ባንክ መለያዎ ይደርሳሉ። የማውጫ መጠንዎ ለደረጃዎ ከሚፈለገው ዝቅተኛ ገደብ እንደሚበልጥ ያረጋግጡ።</p>"
+            },
+            'why-topup': {
+                meta: "የእርስዎ ተቀማጭ ሙሉ በሙሉ የሚመለስ የስራ ካፒታል ነው",
+                content: "<p>ተቀማጩ ክፍያ አይደለም—እሱ <strong>ሙሉ በሙሉ የሚመለስ የስራ ካፒታል</strong> ነው። ዋና ገንዘቦችዎን በማንኛውም ጊዜ ማውጣት ይችላሉ። ዕለታዊ የብራንድ ትዕዛዞችን ለማስተናገድ እና ኮሚሽን ለማግኘት እንደ የደህንነት ዋስትና ሆኖ ያገለግላል።</p>"
+            },
+            'task-steps': {
+                meta: "ደረጃ በደረጃ፦ አድራሻ ይጨምሩ → ትዕዛዝ ያስገቡ",
+                content: "<ol><li>ወደ ፒጂ ዳሽቦርድ ይግቡ።</li><li>ወደ 'የዛሬ ትዕዛዞች' ይሂዱ።</li><li>በተግባሩ መግለጫ ውስጥ የተሰጠውን የመላኪያ አድራሻ ይጨምሩ።</li><li>ትዕዛዙን ለማረጋገጥ 'ግዛ' የሚለውን ጠቅ ያድርጉ።</li><li>ጊዜው እስኪያልቅ ይጠብቁ—ኮሚሽኑ በራስ-ሰር ይጨመራል።</li></ol>"
+            },
+            'order-guide': {
+                meta: "መስኮች፣ የሁኔታ ቀለሞች እና የስብስብ ማጠናቀቂያ አመክንዮ",
+                content: "<p><strong>የትዕዛዝ ሁኔታ ቀለሞች፦</strong><br>🟢 <strong>አረንጓዴ</strong> – ለማስኬድ ዝግጁ ('ግዛ' የሚለውን ጠቅ ያድርጉ)<br>🟡 <strong>ቢጫ</strong> – ማረጋገጫ በመጠባበቅ ላይ<br>🔴 <strong>ቀይ</strong> – ጊዜው አልቋል / ተጠናቋል</p><p><strong>የስብስብ አመክንዮ፦</strong> በአንድ ስብስብ ውስጥ ያሉትን ሁሉንም በመጠባበቅ ላይ ያሉ ትዕዛዞች በሙሉ ከማጠናቀቅዎ በፊት ወደ ቀጣዩ ስብስብ ከመሄድዎ በፊት ሁሉንም ያጠናቅቁ—ይህ የዕለታዊ ኮሚሽን ብቃትዎን ያሳድጋል።</p>"
+            },
+            'extra-earnings': {
+                meta: "የማጣቀሻ ጉርሻ፣ የበታች ቅናሾች፣ የደህንነት ምርቶች",
+                content: "<ul><li><strong>የማጣቀሻ ጉርሻ፦</strong> የሚያመለክቷቸው ሰዎች ዕለታዊ ኮሚሽን መቶኛ ያግኙ።</li><li><strong>የበታች ቅናሾች፦</strong> ከፍተኛ የቪአይፒ ደረጃዎች በደህንነት ምርቶች ላይ የተቀነሰ ዋጋ ያገኛሉ።</li><li><strong>የደህንነት ምርቶች፦</strong> መለያዎን የሚጠብቁ እና ዕለታዊ ገቢን የሚያሳድጉ አማራጭ ምርቶች።</li></ul>"
+            },
+            'platform-synergy': {
+                meta: "ጋብዝ → ጉርሻ → የደህንነት ምርቶች → ማሻሻያ → የቡድን ገቢ → ቅናሾች",
+                content: "<p>የእድገት ሞዴላችን፦ <strong>ጋብዝ</strong> → <strong>ጉርሻ</strong> ያግኙ → <strong>የደህንነት ምርቶች</strong> ይግዙ → ደረጃዎን <strong>ያሻሽሉ</strong> → <strong>የቡድን ገቢ</strong> ይጨምሩ → ለመላው ቡድንዎ <strong>ቅናሾችን</strong> ይክፈቱ።</p>"
+            },
+            'order-block-reasons': {
+                meta: "የተለመዱ ስህተቶች እና እንዴት እንደሚፈቱ",
+                content: "<ul><li><strong>በቂ ያልሆነ ሂሳብ፦</strong> የትዕዛዙን መጠን ለመሸፈን መለያዎን ይሙሉ።</li><li><strong>የተሳሳተ የአድራሻ ቅርጸት፦</strong> የመላኪያ አድራሻው ከተግባሩ መግለጫ ጋር በትክክል እንደሚዛመድ ያረጋግጡ።</li><li><strong>የአውታረ መረብ ጊዜ ማለፍ፦</strong> ገጹን ያድሱ እና እንደገና ይሞክሩ።</li></ul>"
+            },
+            'letter-to-team': {
+                meta: "እውነተኛ፣ ታማኝ እና ዘላቂ እድል",
+                content: "<div class='letter-card'><div class='letter-quote-icon'>❝</div><p class='dropcap'>ውድ የቡድን አባል፣ ይህ ፈጣን የሀብት መሰብሰቢያ እቅድ አይደለም። እሱ የብራንድ ግብይት መረጃን ለማረጋገጥ የሚከፍል እውነተኛ፣ ዘላቂ ስራ ነው። ጥረቶችዎ ዋጋ አላቸው፣ እና ተቀማጮችዎ ደህና ናቸው።</p><p>ለ8 ዓመታት ስራ ላይ እንገኛለን፣ እና መድረካችን ግልጽ እና ህጋዊ ነው። በየቀኑ በሺዎች የሚቆጠሩ ትዕዛዞችን እናስኬዳለን። ይጠቀሙን እና አብረን እንበልጽ።</p><p><strong>ወደ ፒጂ ቤተሰብ እንኳን በደህና መጡ።</strong></p></div>"
+            },
+            'pg-rules': {
+                meta: "የሁሉም ሰራተኞች ኦፊሴላዊ መመሪያዎች እና ፖሊሲዎች",
+                content: "<ul><li><strong>በአንድ ሰው አንድ መለያ</strong> – ብዙ መለያዎች በጥብቅ የተከለከሉ ናቸው።</li><li><strong>ትዕዛዞች በተሰጠው ጊዜ ውስጥ መጠናቀቅ አለባቸው።</strong></li><li><strong>ማውጫዎች የሚከናወኑት በስራ ቀናት ብቻ ነው።</strong></li><li><strong>አስተዳዳሪዎን ያክብሩ እና መመሪያዎችን ይከተሉ።</strong></li></ul>"
+            },
+            'contact-manager': {
+                meta: "ለተቀማጭ/ማውጫ/ማሻሻያ ቀጥተኛ ድጋፍ",
                 content: buildContactManagerContent()
-            };
-            ARTICLES['activity-center'] = {
-                title: "📢 የእንቅስቃሴ ማዕከል",
+            },
+            'activity-center': {
                 meta: "ወቅታዊ እንቅስቃሴዎችን ይመልከቱ እና ይሳተፉ",
                 content: buildActivityListHTML()
-            };
-            ACTIVITIES.forEach(act => {
-                ARTICLES['activity-' + act.id] = {
-                    title: act.title,
-                    meta: act.time || "እንቅስቃሴ",
-                    content: buildActivityDetailHTML(act)
-                };
-            });
-        }
+            }
+        };
 
         function buildContactManagerContent() {
-            if (window.CONTACT_CONFIG) {
-                if (window.CONTACT_CONFIG.contacts && Array.isArray(window.CONTACT_CONFIG.contacts)) {
-                    let links = '';
-                    for (let c of window.CONTACT_CONFIG.contacts) {
-                        links += `<a href="${c.url}" target="_blank" rel="noopener noreferrer" class="contact-link">${c.icon ? c.icon+' ' : ''}${c.name}</a> `;
+            var cfg = window.CONTACT_CONFIG;
+            if (cfg) {
+                if (cfg.contacts && Array.isArray(cfg.contacts) && cfg.contacts.length > 0) {
+                    var links = '';
+                    for (var i = 0; i < cfg.contacts.length; i++) {
+                        var c = cfg.contacts[i];
+                        links += '<a href="' + c.url + '" target="_blank" rel="noopener noreferrer" class="contact-link">' + (c.icon ? c.icon + ' ' : '') + c.name + '</a> ';
                     }
-                    return `<p><strong>የሃላፊ እውቂያዎች፡</strong></p><p>${links}</p><p>🕒 <strong>የስራ ሰዓት፡</strong> ${window.CONTACT_CONFIG.hours || "9h – 21h (UTC+3)"}</p><p>ሃላፊዎ ለመሙያ ማረጋገጫ፣ ለመውጫ ጥያቄዎች፣ ለደረጃ ማሻሻያ እና ለዕለታዊ ድጋፍ ይረዱዎታል።</p>`;
-                } else if (window.CONTACT_CONFIG.telegram && window.CONTACT_CONFIG.signal) {
-                    return `<p><strong>የሃላፊ ኦፊሴላዊ እውቂያዎች፡</strong></p><p><a href="${window.CONTACT_CONFIG.telegram}" target="_blank" rel="noopener noreferrer" class="contact-link">📱 ቴሌግራም ሃላፊ</a> <a href="${window.CONTACT_CONFIG.signal}" target="_blank" rel="noopener noreferrer" class="contact-link">🔒 ሲግናል ሃላፊ</a></p><p>🕒 <strong>የስራ ሰዓት፡</strong> ${window.CONTACT_CONFIG.hours || "9h – 21h (UTC+3)"}</p><p>ሃላፊዎ ለመሙያ ማረጋገጫ፣ ለመውጫ ጥያቄዎች፣ ለደረጃ ማሻሻያ እና ለዕለታዊ ድጋፍ ይረዱዎታል።</p>`;
+                    return '<p><strong>የአስተዳዳሪ እውቂያዎች፦</strong></p><p>' + links + '</p><p>🕒 <strong>የስራ ሰዓት፦</strong> ' + (cfg.hours || "9h – 21h (UTC+3)") + '</p><p>አስተዳዳሪዎ ለተቀማጭ ማረጋገጫ፣ የማውጫ ጥያቄዎች፣ የደረጃ ማሻሻያ እና ዕለታዊ ድጋፍ ይረዳዎታል።</p>';
+                } else if (cfg.telegram && cfg.signal) {
+                    return '<p><strong>ኦፊሴላዊ የአስተዳዳሪ እውቂያዎች፦</strong></p><p><a href="' + cfg.telegram + '" target="_blank" rel="noopener noreferrer" class="contact-link">📱 ቴሌግራም አስተዳዳሪ</a> <a href="' + cfg.signal + '" target="_blank" rel="noopener noreferrer" class="contact-link">🔒 ሲግናል አስተዳዳሪ</a></p><p>🕒 <strong>የስራ ሰዓት፦</strong> ' + (cfg.hours || "9h – 21h (UTC+3)") + '</p><p>አስተዳዳሪዎ ለተቀማጭ ማረጋገጫ፣ የማውጫ ጥያቄዎች፣ የደረጃ ማሻሻያ እና ዕለታዊ ድጋፍ ይረዳዎታል።</p>';
                 }
             }
-            return `<p><em>⚠️ የእውቂያ መረጃ አልተዋቀረም። እባክዎ ሃላፊዎን በቀጥታ ያነጋግሩ።</em></p><p>አስተዳዳሪ ከሆኑ በጣቢያው ስር <code>contact-config.js</code> ፋይል በ<code>contacts</code> ድርድር ወይም በ<code>telegram/signal</code> መስኮች ይፍጠሩ።</p>`;
+            return '<p><em>⚠️ የእውቂያ መረጃ አልተዋቀረም። እባክዎ አስተዳዳሪዎን በቀጥታ ያነጋግሩ።</em></p>';
         }
 
         function buildActivityListHTML() {
             if (!ACTIVITIES || ACTIVITIES.length === 0) {
-                return `<p style="text-align:center;padding:40px 0;color:var(--text-muted);">📭 በአሁኑ ጊዜ ምንም እንቅስቃሴ የለም። በኋላ ይመለሱ።</p>`;
+                return '<p style="text-align:center;padding:40px 0;color:var(--text-muted);">📭 በአሁኑ ጊዜ ምንም እንቅስቃሴዎች የሉም። እባክዎ በኋላ ይመለሱ።</p>';
             }
-            let html = `<div style="max-width:600px;margin:0 auto;"><p style="color:var(--text-secondary);margin-bottom:20px;">ከታች ካሉት እንቅስቃሴዎች አንዱን ይምረጡ ዝርዝሩን ለማየት፡</p>`;
-            ACTIVITIES.forEach(act => {
-                const statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
-                const statusText = act.status || 'በሂደት ላይ ነው';
-                html += `<div class="activity-list-item" onclick="showDetail('activity-${act.id}')">
-                    <span class="activity-title">${act.title}</span>
-                    <span class="activity-status ${statusClass}">${statusText}</span>
-                </div>`;
+            var html = '<div style="max-width:600px;margin:0 auto;"><p style="color:var(--text-secondary);margin-bottom:20px;">ዝርዝሮችን ለማየት ከታች ካሉት እንቅስቃሴዎች አንዱን ይምረጡ፦</p>';
+            ACTIVITIES.forEach(function(act) {
+                var statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
+                var statusText = act.status === 'በሂደት ላይ ነው' ? 'ንቁ' : (act.status || 'ንቁ');
+                html += '<div class="activity-list-item" onclick="showDetail(\'activity-' + act.id + '\')">' +
+                    '<span class="activity-title">' + act.title + '</span>' +
+                    '<span class="activity-status ' + statusClass + '">' + statusText + '</span>' +
+                '</div>';
             });
-            html += `<div class="detail-actions" style="margin-top:24px;">
-                <button class="detail-btn detail-btn-primary" onclick="backToHome()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    ወደ መመሪያዎች ተመለስ
-                </button>
-            </div></div>`;
+            html += '<div class="detail-actions" style="margin-top:24px;">' +
+                '<button class="detail-btn detail-btn-primary" onclick="backToHome()">' +
+                '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>' +
+                ' ወደ መመሪያዎች ተመለስ' +
+                '</button>' +
+            '</div></div>';
             return html;
         }
 
         function buildActivityDetailHTML(act) {
-            let html = `<div style="max-width:600px;margin:0 auto;">`;
-            const statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
-            html += `<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
-                <span style="font-size:0.9rem;color:var(--text-muted);">📅 ${act.time || 'ቋሚ'}</span>
-                <span class="activity-status ${statusClass}" style="font-size:0.8rem;padding:4px 16px;">${act.status || 'በሂደት ላይ ነው'}</span>
-            </div>`;
+            var html = '<div style="max-width:600px;margin:0 auto;">';
+            var statusClass = act.status === 'በሂደት ላይ ነው' ? '' : 'ended';
+            var statusText = act.status === 'በሂደት ላይ ነው' ? 'ንቁ' : (act.status || 'ንቁ');
+            html += '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:16px;">' +
+                '<span style="font-size:0.9rem;color:var(--text-muted);">📅 ' + (act.time || 'ቋሚ') + '</span>' +
+                '<span class="activity-status ' + statusClass + '" style="font-size:0.8rem;padding:4px 16px;">' + statusText + '</span>' +
+            '</div>';
             if (act.image) {
-                html += `<div class="activity-detail-image">
-                    <img src="${act.image}" alt="${act.title}" onclick="openLightbox(this)">
-                </div>`;
+                html += '<div class="activity-detail-image">' +
+                    '<img src="' + act.image + '" alt="' + act.title + '" onclick="openLightbox(this)">' +
+                '</div>';
             }
             if (act.content) {
-                html += `<div style="margin-top:12px;">${act.content}</div>`;
+                html += '<div style="margin-top:12px;">' + act.content + '</div>';
             }
-            html += `<div class="detail-actions" style="margin-top:24px;">
-                <button class="detail-btn detail-btn-primary" onclick="showDetail('activity-center')">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                    ወደ እንቅስቃሴዎች ዝርዝር ተመለስ
-                </button>
-            </div></div>`;
+            html += '<div class="detail-actions" style="margin-top:24px;">' +
+                '<button class="detail-btn detail-btn-primary" onclick="showDetail(\'activity-center\')">' +
+                '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>' +
+                ' ወደ እንቅስቃሴ ዝርዝር ተመለስ' +
+                '</button>' +
+            '</div></div>';
             return html;
         }
 
         // ============================================================
-        // ALL_CARDS
+        // ALL_CARDS (አማርኛ)
         // ============================================================
-        const ALL_CARDS = [
+        var ALL_CARDS = [
             { id: "activity-center", title: "📢 የእንቅስቃሴ ማዕከል", desc: "ወቅታዊ እንቅስቃሴዎችን ይመልከቱ እና ይሳተፉ" },
-            { id: "why-pg-safe", title: "ፒጂ ለምን ደህንነቱ የተገበረ ነው?", desc: "ህጋዊ፣ የተረጋጋ፣ የገንዘብ ደህንነት እና ሊረጋገጥ የሚችል" },
-            { id: "deposit-earnings", title: "በደረጃ ገቢዎች", desc: "ዕለታዊ ገቢ፡ 60 ETB (ጁኒየር)፣ 280 ETB (VIP 1)፣ 800 ETB (VIP 2)፣ 2,500 ETB (VIP 3)" },
-            { id: "topup-steps", title: "የመሙያ ደረጃዎች", desc: "ሃላፊውን ያነጋግሩ → ዝውውር ያድርጉ → ያረጋግጡ → ክሬዲት ይቀበሉ" },
-            { id: "withdrawal-rules", title: "መውጫ", desc: "ከሰኖ እስከ አርብ ብቻ፣ በ1–4 ቀናት ውስጥ ይደርሳል" },
-            { id: "why-topup", title: "ለምን መሙላት አለብኝ?", desc: "ተቀማጩ የስራ ካፒታል ነው፣ ሙሉ በሙሉ የሚመለስ" },
-            { id: "task-steps", title: "የተግባር ደረጃዎች", desc: "ደረጃ በደረጃ፡ አድራሻ ይጨምሩ → ትዕዛዝ ያስገቡ" },
-            { id: "order-guide", title: "የትዕዛዝ መመሪያ", desc: "መስኮች፣ የሁኔታ ቀለሞች እና የክምችት ማጠናቀቅ" },
-            { id: "extra-earnings", title: "ተጨማሪ ገቢዎች", desc: "የማጣቀሻ ጉርሻ፣ ቅናሾች፣ የደህንነት ምርቶች" },
-            { id: "platform-synergy", title: "ትብብር እና እድገት", desc: "ጋብዙ → ጉርሻ → የደህንነት ምርቶች → ያሻሽሉ → የቡድን ገቢ → ቅናሾች" },
-            { id: "order-block-reasons", title: "የትዕዛዝ መዘጋት ምክንያቶች", desc: "የተለመዱ ስህተቶች እና እንዴት መፍታት" },
-            { id: "letter-to-team", title: "ለቡድናችን ደብዳቤ", desc: "እውነተኛ፣ ሐቀኛ እና ዘላቂ እድል በእጃችሁ ለማስቀመጥ ነው ያለነው።" },
-            { id: "pg-rules", title: "የመድረክ ደንብ", desc: "የመድረክ መመሪያዎች እና ፖሊሲዎች" },
-            { id: "contact-manager", title: "ሃላፊውን ያነጋግሩ", desc: "ለተቀማጭ/መውጫ/ማሻሻያ ቀጥተኛ ድጋፍ" }
+            { id: "why-pg-safe", title: "ፒጂ ደህንነቱ የተጠበቀ ለምንድነው?", desc: "ህጋዊ፣ የተረጋጋ፣ የገንዘብ ደህንነት እና ሊረጋገጥ የሚችል" },
+            { id: "deposit-earnings", title: "በደረጃ ገቢ", desc: "ዕለታዊ ገቢ፦ 60 ብር (ጁኒየር)፣ 280 ብር (ቪአይፒ 1)፣ 800 ብር (ቪአይፒ 2)፣ 2,500 ብር (ቪአይፒ 3)" },
+            { id: "topup-steps", title: "የተቀማጭ እርከኖች", desc: "አስተዳዳሪን ያነጋግሩ → ያስተላልፉ → ያረጋግጡ → ክሬዲት ይቀበሉ" },
+            { id: "withdrawal-rules", title: "ማውጫ", desc: "ሰኞ–አርብ ብቻ፣ በ1–4 ቀናት ውስጥ ይደርሳል" },
+            { id: "why-topup", title: "ለምን ተቀማጭ?", desc: "የእርስዎ ተቀማጭ ሙሉ በሙሉ የሚመለስ የስራ ካፒታል ነው" },
+            { id: "task-steps", title: "የተግባር እርከኖች", desc: "ደረጃ በደረጃ፦ አድራሻ ይጨምሩ → ትዕዛዝ ያስገቡ" },
+            { id: "order-guide", title: "የትዕዛዝ መመሪያ", desc: "መስኮች፣ የሁኔታ ቀለሞች እና የስብስብ ማጠናቀቂያ አመክንዮ" },
+            { id: "extra-earnings", title: "ተጨማሪ ገቢ", desc: "የማጣቀሻ ጉርሻ፣ የበታች ቅናሾች፣ የደህንነት ምርቶች" },
+            { id: "platform-synergy", title: "መድረክ እና እድገት", desc: "ጋብዝ → ጉርሻ → የደህንነት ምርቶች → ማሻሻያ → የቡድን ገቢ → ቅናሾች" },
+            { id: "order-block-reasons", title: "የትዕዛዝ መዘጋት ምክንያቶች", desc: "የተለመዱ ስህተቶች እና እንዴት እንደሚፈቱ" },
+            { id: "letter-to-team", title: "ለቡድናችን ደብዳቤ", desc: "እውነተኛ፣ ታማኝ እና ዘላቂ እድል" },
+            { id: "pg-rules", title: "የመድረክ ህጎች", desc: "የሁሉም ሰራተኞች ኦፊሴላዊ መመሪያዎች እና ፖሊሲዎች" },
+            { id: "contact-manager", title: "አስተዳዳሪን ያግኙ", desc: "ለተቀማጭ/ማውጫ/ማሻሻያ ቀጥተኛ ድጋፍ" }
         ];
 
         // ============================================================
         // RENDER & NAVIGATION
         // ============================================================
-        const homeContainer = document.getElementById('homeContainer');
-        const detailContainer = document.getElementById('detailContainer');
-        const cardsArea = document.getElementById('cardsArea');
-        const detailContentDiv = document.getElementById('detailContent');
-        const tocModal = document.getElementById('tocModal');
-        const tocToggleBtn = document.getElementById('headerTocBtn');
-        const closeTocBtn = document.getElementById('closeTocBtn');
-        const tocList = document.getElementById('tocList');
-        const toTopBtn = document.getElementById('toTopBtn');
-        let savedScrollY = 0;
-        let isTransitioning = false;
+        var homeContainer = document.getElementById('homeContainer');
+        var detailContainer = document.getElementById('detailContainer');
+        var cardsArea = document.getElementById('cardsArea');
+        var detailContentDiv = document.getElementById('detailContent');
+        var tocModal = document.getElementById('tocModal');
+        var tocToggleBtn = document.getElementById('headerTocBtn');
+        var closeTocBtn = document.getElementById('closeTocBtn');
+        var tocList = document.getElementById('tocList');
+        var toTopBtn = document.getElementById('toTopBtn');
+        var savedScrollY = 0;
+        var isTransitioning = false;
 
         function getCardIcon(cardId) {
-            const icons = {
-                'activity-center': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
-                'why-pg-safe': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
-                'deposit-earnings': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
-                'topup-steps': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>`,
-                'withdrawal-rules': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M6 14h6m-6 4h12M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" /></svg>`,
-                'why-topup': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`,
-                'task-steps': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>`,
-                'order-guide': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
-                'extra-earnings': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>`,
-                'platform-synergy': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`,
-                'order-block-reasons': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>`,
-                'letter-to-team': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
-                'pg-rules': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>`,
-                'contact-manager': `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>`
+            var icons = {
+                'activity-center': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+                'why-pg-safe': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>',
+                'deposit-earnings': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+                'topup-steps': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>',
+                'withdrawal-rules': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M6 14h6m-6 4h12M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z" /></svg>',
+                'why-topup': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>',
+                'task-steps': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg>',
+                'order-guide': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>',
+                'extra-earnings': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>',
+                'platform-synergy': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+                'order-block-reasons': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>',
+                'letter-to-team': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>',
+                'pg-rules': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>',
+                'contact-manager': '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>'
             };
-            return icons[cardId] || `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>`;
+            return icons[cardId] || '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6" /></svg>';
         }
 
         function getVisibleIds() {
-            return ALL_CARDS.map(c => c.id);
+            return ALL_CARDS.map(function(c) { return c.id; });
         }
 
         function renderCards() {
             if (!cardsArea) return;
-            const visible = getVisibleIds();
+            var visible = getVisibleIds();
             cardsArea.innerHTML = '';
-            ALL_CARDS.forEach(card => {
-                if (!visible.includes(card.id)) return;
-                let article = ARTICLES[card.id];
+            ALL_CARDS.forEach(function(card) {
+                if (visible.indexOf(card.id) === -1) return;
+                var article = ARTICLES[card.id];
                 if (card.id === 'activity-center') {
                     article = ARTICLES['activity-center'];
                 }
-                const shortDesc = article ? article.meta : card.desc;
-                const iconSvg = getCardIcon(card.id);
-                const cardDiv = document.createElement('div');
+                var shortDesc = article ? article.meta : card.desc;
+                var iconSvg = getCardIcon(card.id);
+                var cardDiv = document.createElement('div');
                 cardDiv.className = 'card';
                 cardDiv.setAttribute('data-id', card.id);
-                cardDiv.innerHTML = `
-                    <div class="card-header">
-                        <h3>${iconSvg} ${card.title}</h3>
-                    </div>
-                    <div class="card-excerpt">${shortDesc}</div>
-                `;
+                cardDiv.innerHTML = 
+                    '<div class="card-header">' +
+                        '<h3>' + iconSvg + ' ' + card.title + '</h3>' +
+                    '</div>' +
+                    '<div class="card-excerpt">' + shortDesc + '</div>';
                 cardsArea.appendChild(cardDiv);
             });
         }
 
         function renderTOC() {
             if (!tocList) return;
-            const visibleIds = getVisibleIds();
+            var visibleIds = getVisibleIds();
             tocList.innerHTML = '';
-            ALL_CARDS.forEach(card => {
-                if (!visibleIds.includes(card.id)) return;
-                const li = document.createElement('li');
-                const a = document.createElement('a');
+            ALL_CARDS.forEach(function(card) {
+                if (visibleIds.indexOf(card.id) === -1) return;
+                var li = document.createElement('li');
+                var a = document.createElement('a');
                 a.href = '#';
                 a.textContent = card.title;
                 a.setAttribute('data-id', card.id);
@@ -1589,9 +1581,12 @@ function switchLang(lang) {
         function showDetail(articleId, fromBack) {
             if (isTransitioning) return;
             
-            if (articleId.startsWith('activity-') && articleId !== 'activity-center') {
-                const actId = articleId.replace('activity-', '');
-                const act = ACTIVITIES.find(a => a.id === actId);
+            if (articleId.indexOf('activity-') === 0 && articleId !== 'activity-center') {
+                var actId = articleId.replace('activity-', '');
+                var act = null;
+                for (var i = 0; i < ACTIVITIES.length; i++) {
+                    if (ACTIVITIES[i].id === actId) { act = ACTIVITIES[i]; break; }
+                }
                 if (act) {
                     ARTICLES['activity-' + act.id] = {
                         title: act.title,
@@ -1611,51 +1606,64 @@ function switchLang(lang) {
                 };
             }
             
-            const article = ARTICLES[articleId];
+            var article = ARTICLES[articleId];
+            if (!article && BUILTIN_CONTENT[articleId]) {
+                var cardTitle = '';
+                for (var j = 0; j < ALL_CARDS.length; j++) {
+                    if (ALL_CARDS[j].id === articleId) { cardTitle = ALL_CARDS[j].title; break; }
+                }
+                article = {
+                    title: cardTitle || articleId,
+                    meta: BUILTIN_CONTENT[articleId].meta || '',
+                    content: BUILTIN_CONTENT[articleId].content || '<p>ይዘት አልተገኘም።</p>'
+                };
+                ARTICLES[articleId] = article;
+            }
             if (!article) return;
             isTransitioning = true;
             savedScrollY = window.scrollY;
-           document.querySelector('.bot-banner').style.display = 'none';
-
             
-            let actionsHtml = '';
+            var banner = document.querySelector('.bot-banner');
+            if (banner) banner.style.display = 'none';
+            
+            var actionsHtml = '';
             if (articleId === 'contact-manager') {
-                actionsHtml = `<div class="detail-actions"><button class="detail-btn detail-btn-primary" onclick="backToHome()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg> ወደ መመሪያዎች ተመለስ</button></div>`;
-            } else if (articleId === 'activity-center' || articleId.startsWith('activity-')) {
+                actionsHtml = '<div class="detail-actions"><button class="detail-btn detail-btn-primary" onclick="backToHome()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg> ወደ መመሪያዎች ተመለስ</button></div>';
+            } else if (articleId === 'activity-center' || articleId.indexOf('activity-') === 0) {
                 actionsHtml = '';
             } else {
-                actionsHtml = `<div class="detail-actions">
-                    <button class="detail-btn" onclick="showDetail('contact-manager')">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:18px;height:18px;">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                        </svg>
-                        ሃላፊውን ያነጋግሩ
-                    </button>
-                    <button class="detail-btn detail-btn-primary" onclick="backToHome()">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
-                        ወደ መመሪያዎች ተመለስ
-                    </button>
-                </div>`;
+                actionsHtml = '<div class="detail-actions">' +
+                    '<button class="detail-btn" onclick="showDetail(\'contact-manager\')">' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:18px;height:18px;">' +
+                        '<path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />' +
+                    '</svg>' +
+                    ' አስተዳዳሪን ያግኙ' +
+                    '</button>' +
+                    '<button class="detail-btn detail-btn-primary" onclick="backToHome()">' +
+                    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width:18px;height:18px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>' +
+                    ' ወደ መመሪያዎች ተመለስ' +
+                    '</button>' +
+                '</div>';
             }
             
-            const detailIcon = getCardIcon(articleId);
-            let metaDisplay = article.meta || '';
+            var detailIcon = getCardIcon(articleId);
+            var metaDisplay = article.meta || '';
             if (articleId === 'activity-center') {
                 metaDisplay = 'ወቅታዊ እንቅስቃሴዎች';
             }
-            const detailHtml = `<div class="detail-title"><span>${detailIcon} ${article.title}</span></div><div class="detail-meta">📌 ${metaDisplay}</div><div class="detail-text">${article.content}</div>${actionsHtml}`;
+            var detailHtml = '<div class="detail-title"><span>' + detailIcon + ' ' + article.title + '</span></div><div class="detail-meta">📌 ' + metaDisplay + '</div><div class="detail-text">' + article.content + '</div>' + actionsHtml;
             detailContentDiv.innerHTML = detailHtml;
             
-            const detailDiv = document.querySelector('.detail-view');
+            var detailDiv = document.querySelector('.detail-view');
             detailDiv.classList.remove('active');
             void detailDiv.offsetWidth;
             homeContainer.classList.add('view-exit');
-            setTimeout(() => {
+            setTimeout(function() {
                 homeContainer.classList.add('hidden');
                 detailContainer.classList.remove('hidden');
                 homeContainer.classList.remove('view-exit');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                if (!fromBack && history.pushState) history.pushState({ view: 'detail', id: articleId }, '', `#${articleId}`);
+                if (!fromBack && history.pushState) history.pushState({ view: 'detail', id: articleId }, '', '#' + articleId);
                 detailDiv.classList.add('active');
                 isTransitioning = false;
             }, 200);
@@ -1664,13 +1672,14 @@ function switchLang(lang) {
         function backToHome() {
             if (isTransitioning) return;
             isTransitioning = true;
-            const detailDiv = document.querySelector('.detail-view');
+            var detailDiv = document.querySelector('.detail-view');
             if (detailDiv) detailDiv.classList.remove('active');
             detailContainer.classList.add('view-exit');
-            setTimeout(() => {
+            setTimeout(function() {
                 detailContainer.classList.add('hidden');
                 homeContainer.classList.remove('hidden');
-                document.querySelector('.bot-banner').style.display = 'block';
+                var banner = document.querySelector('.bot-banner');
+                if (banner) banner.style.display = 'block';
                 detailContainer.classList.remove('view-exit');
                 if (savedScrollY) window.scrollTo({ top: savedScrollY, behavior: 'auto' });
                 if (location.hash) {
@@ -1694,8 +1703,8 @@ function switchLang(lang) {
                 if (lightbox.style.display === 'flex') closeLightbox();
                 else if (tocModal.classList.contains('active')) tocModal.classList.remove('active');
                 else if (!detailContainer.classList.contains('hidden')) {
-                    const hash = location.hash.slice(1);
-                    if (hash && hash.startsWith('activity-') && hash !== 'activity-center') {
+                    var hash = location.hash.slice(1);
+                    if (hash && hash.indexOf('activity-') === 0 && hash !== 'activity-center') {
                         showDetail('activity-center');
                     } else {
                         backToHome();
@@ -1711,46 +1720,46 @@ function switchLang(lang) {
         document.getElementById('floatingContactBtn').addEventListener('click', function() {
             if (!detailContainer.classList.contains('hidden')) {
                 backToHome();
-                setTimeout(() => showDetail('contact-manager'), 100);
+                setTimeout(function() { showDetail('contact-manager'); }, 100);
             } else {
                 showDetail('contact-manager');
             }
         });
 
         cardsArea.addEventListener('click', function(e) {
-            const card = e.target.closest('.card');
+            var card = e.target.closest('.card');
             if (!card) return;
-            const id = card.getAttribute('data-id');
+            var id = card.getAttribute('data-id');
             if (id) showDetail(id);
         });
 
-        tocToggleBtn.addEventListener('click', () => tocModal.classList.add('active'));
-        closeTocBtn.addEventListener('click', () => tocModal.classList.remove('active'));
-        tocModal.addEventListener('click', (e) => { if (e.target === tocModal) tocModal.classList.remove('active'); });
-        tocList.addEventListener('click', (e) => {
-            const a = e.target.closest('a');
+        tocToggleBtn.addEventListener('click', function() { tocModal.classList.add('active'); });
+        closeTocBtn.addEventListener('click', function() { tocModal.classList.remove('active'); });
+        tocModal.addEventListener('click', function(e) { if (e.target === tocModal) tocModal.classList.remove('active'); });
+        tocList.addEventListener('click', function(e) {
+            var a = e.target.closest('a');
             if (!a) return;
             e.preventDefault();
-            const id = a.getAttribute('data-id');
+            var id = a.getAttribute('data-id');
             if (!id) return;
             tocModal.classList.remove('active');
             if (!detailContainer.classList.contains('hidden')) {
                 backToHome();
-                setTimeout(() => showDetail(id), 100);
+                setTimeout(function() { showDetail(id); }, 100);
             } else {
-                const targetCard = document.querySelector(`.card[data-id="${id}"]`);
+                var targetCard = document.querySelector('.card[data-id="' + id + '"]');
                 if (targetCard) {
                     targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     targetCard.classList.add('card-highlight');
-                    setTimeout(() => targetCard.classList.remove('card-highlight'), 800);
+                    setTimeout(function() { targetCard.classList.remove('card-highlight'); }, 800);
                 } else {
                     showDetail(id);
                 }
             }
         });
 
-        window.addEventListener('popstate', (e) => {
-            const state = e.state;
+        window.addEventListener('popstate', function(e) {
+            var state = e.state;
             if (state && state.view === 'detail' && state.id && ARTICLES[state.id]) {
                 showDetail(state.id, true);
             } else if (!detailContainer.classList.contains('hidden')) {
@@ -1759,7 +1768,7 @@ function switchLang(lang) {
         });
 
         function initRouting() {
-            const hash = location.hash.slice(1);
+            var hash = location.hash.slice(1);
             if (hash && ARTICLES[hash]) showDetail(hash);
             else { homeContainer.classList.remove('hidden'); detailContainer.classList.add('hidden'); }
         }
@@ -1768,27 +1777,78 @@ function switchLang(lang) {
         // LOAD DATA AND START
         // ============================================================
         Promise.all([
-            fetch('data/cards.json?t=' + Date.now()).then(res => {
+            fetch('data/cards.json?t=' + Date.now()).then(function(res) {
                 if (!res.ok) throw new Error('Failed to load cards.json');
                 return res.json();
             }),
-            fetch('data/activities.json?t=' + Date.now()).then(res => {
+            fetch('data/activities.json?t=' + Date.now()).then(function(res) {
                 if (!res.ok) return [];
                 return res.json();
-            }).catch(() => [])
+            }).catch(function() { return []; })
         ])
-        .then(([cardsData, activitiesData]) => {
+        .then(function(results) {
+            var cardsData = results[0];
+            var activitiesData = results[1];
             CARDS_DATA = cardsData;
             ACTIVITIES = activitiesData || [];
-            buildArticlesFromData();
+            CARDS_DATA.forEach(function(card) {
+                if (card.id && card.content) {
+                    ARTICLES[card.id] = {
+                        title: card.title || (function() { for (var k = 0; k < ALL_CARDS.length; k++) { if (ALL_CARDS[k].id === card.id) return ALL_CARDS[k].title; } return card.id; })(),
+                        meta: card.meta || '',
+                        content: card.content
+                    };
+                }
+            });
+            ALL_CARDS.forEach(function(card) {
+                if (!ARTICLES[card.id] && BUILTIN_CONTENT[card.id]) {
+                    ARTICLES[card.id] = {
+                        title: card.title,
+                        meta: BUILTIN_CONTENT[card.id].meta || '',
+                        content: BUILTIN_CONTENT[card.id].content
+                    };
+                }
+            });
+            if (!ARTICLES['contact-manager'] && BUILTIN_CONTENT['contact-manager']) {
+                ARTICLES['contact-manager'] = {
+                    title: "አስተዳዳሪን ያግኙ",
+                    meta: BUILTIN_CONTENT['contact-manager'].meta,
+                    content: BUILTIN_CONTENT['contact-manager'].content
+                };
+            }
             renderCards();
             renderTOC();
             initRouting();
             checkScrollForToTop();
         })
-        .catch(err => {
+        .catch(function(err) {
             console.error('Error loading data:', err);
-            cardsArea.innerHTML = `<div style="padding:40px;text-align:center;color:var(--text-muted);">⚠️ ይዘቱን ማግኘት አልተቻለም። እባክዎ ደግመው ይሞክሩ።</div>`;
+            ALL_CARDS.forEach(function(card) {
+                if (BUILTIN_CONTENT[card.id]) {
+                    ARTICLES[card.id] = {
+                        title: card.title,
+                        meta: BUILTIN_CONTENT[card.id].meta || '',
+                        content: BUILTIN_CONTENT[card.id].content
+                    };
+                } else if (card.id === 'activity-center') {
+                    ARTICLES['activity-center'] = {
+                        title: "📢 የእንቅስቃሴ ማዕከል",
+                        meta: "ወቅታዊ እንቅስቃሴዎችን ይመልከቱ እና ይሳተፉ",
+                        content: buildActivityListHTML()
+                    };
+                }
+            });
+            if (!ARTICLES['contact-manager'] && BUILTIN_CONTENT['contact-manager']) {
+                ARTICLES['contact-manager'] = {
+                    title: "አስተዳዳሪን ያግኙ",
+                    meta: BUILTIN_CONTENT['contact-manager'].meta,
+                    content: BUILTIN_CONTENT['contact-manager'].content
+                };
+            }
+            renderCards();
+            renderTOC();
+            initRouting();
+            checkScrollForToTop();
         });
     })();
 </script>
