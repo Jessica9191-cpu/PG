@@ -3,9 +3,17 @@
     "id": "invite-activity",
     "title": "🎁 Invitation Activities",
     "summary": "Invite your friends and get bonuses",
-    "time": "International time: August 3 to August 9, 2026",
+    "time": "International time: August 10 to August 16, 2026",
     "status": "In Progress",
-    "content": "<p><strong>📋 Activity Rules:</strong></p><ol><li>The invitee must register through the employee's invitation link, which will be counted as a valid invitation.</li><li>To learn how to obtain the invitation link, you may contact the hiring manager.</li></ol><p><strong>🎁 Reward Details:</strong></p><ul><li>Invite your friend as a Junior Employee → 200 ETB</li><li>Invite your friend as a VIP 1 Employee → 600 ETB</li><li>Invite your friend as a VIP 2 Employee → 1,870 ETB</li></ul><p>📅 Activity Period: International time: August 3 to August 9, 2026</p>"
+    "content": "<p><strong>📋 Activity Rules:</strong></p><ol><li>The invitee must register through the employee's invitation link, which will be counted as a valid invitation.</li><li>To learn how to obtain the invitation link, you may contact the hiring manager.</li></ol><p><strong>🎁 Reward Details:</strong></p><ul><li>Invite your friend as a Junior Employee → (No reward)</li><li>Invite your friend as a VIP 1 Employee → 600 ETB</li><li>Invite your friend as a VIP 2 Employee → 1,870 ETB</li></ul><p>📅 Activity Period: International time: August 10 to August 16, 2026</p>"
+  },
+  {
+    "id": "upgrade-activity",
+    "title": "⬆️ Level Upgrade Subsidy Activities",
+    "summary": "Upgrade to VIP level and get additional subsidies",
+    "time": "August 10 to August 16, 2026",
+    "status": "In Progress",
+    "content": "<p><strong>📋 Activity Rules:</strong></p><ol><li>When users upgrade from Junior Employee to VIP 1 or above, the company will provide additional subsidies.</li><li>After the level upgrade, the previous level's deposit will be fully refunded to the user.</li><li>On the day of the upgrade, users can immediately start using the new level's features and order operations.</li></ol><p><strong>🎁 Reward Details:</strong></p><ul><li>Upgrade to VIP 1 or above → Additional subsidy of 600 ETB</li></ul><p>📅 Activity Period: August 10 to August 16, 2026</p>"
   },
   {
     "id": "team-salary-activity",
